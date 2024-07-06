@@ -2,7 +2,22 @@
 export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
-    extend: {},
+    extend: {
+      screens: {
+        xs: '480px',
+        '2xl': '1440px',
+      },
+      colors: {
+        lightGray: '#ebe3e3',
+        gray: '#D9D9D9',
+        primary: '#17b56a',
+        yellow: '#FFE500',
+        orange: '#fb8500',
+      },
+      fontFamily: {
+        nunito: ['Nunito', 'sans-serif'],
+      },
+    },
   },
   plugins: [],
 };
