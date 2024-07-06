@@ -1,0 +1,15 @@
+import { Outlet } from 'react-router-dom';
+import Header from '../components/mainLayout/Header';
+import Footer from '../components/mainLayout/Footer';
+
+const MainLayout = () => {
+  return (
+    <div className='pt-6 overflow-hidden'>
+      <Header />
+      <Outlet />
+      <Footer />
+    </div>
+  );
+};
+
+export default MainLayout;
