@@ -1,37 +1,50 @@
-import test from '../../assets/images/test.png';
 import stars from '../../assets/images/stars.png';
 import Button from '../reusables/Button';
-const ProductCard = () => {
+import { Product } from '../../types/types';
+import view from '../../assets/icons/eye-svgrepo-com.svg';
+import { Link } from 'react-router-dom';
+const ProductCard = ({ product }: { product: Product }) => {
   return (
-    <div className='bg-white rounded-[5px] overflow-hidde group  border border-gray lg:rounded-[12px]'>
+    <div className='bg-white rounded-[5px] overflow-hidden group  border border-gray shadow-md lg:rounded-[12px]'>
       {/* product image */}
-      <div className='bg-gray rounded-[5px= aspect-square overflow-hidden w-full border border-gray rounded-[5px]  relative lg:rounded-[12px]'>
+      <div className='rounded-[5px= aspect-square overflow-hidden w-full  rounded-[5px] relative lg:rounded-[12px]'>
         <img
-          src={test}
+          src={product.image}
           alt=''
-          className='top-1/2 -translate-y-[66%] left-1/2 -translate-x-1/2 absolute  w-[70%]'
+          className='top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 absolute  w-full object-contain aspect-square'
         />
+
+        <Link
+          to={`/products/${product.id}`}
+          className='w-fit h-fit hidden group-hover:block'>
+          <img
+            src={view}
+            alt='view product'
+            className='absolute w-[10%] left-2 top-2 cursor-pointer'
+          />
+        </Link>
       </div>
 
       {/* product information */}
       <div className='py-1 px-[6px] space-y-1 shadow-md lg:py-3 lg:px-3'>
         <div className='lg:space-y-2'>
-          <h4 className='text-[8px] font-semibold text-neutral-600 xs:text-[10px] lg:text-xs xl:text-base'>
-            PHONES
+          <h4 className='text-[9.4px] font-bold xs:text-xs md:text-base  xl:text-2xl text-neutral-500'>
+            {product.category}
           </h4>
           <div className='space-y-[1px]'>
-            <p className='text-[7px] font-bold xs:text-[9px] lg:text-xs  xl:text-base'>
-              Iphone 15 Pro Max (256GB)
+            <p className='text-[9.4px] font-bold xs:text-xs md:text-base  xl:text-2xl'>
+              {product.title}
             </p>
             <div className='flex items-center space-x-1'>
-              <img src={stars} alt='' className='w-14  md:w-20 xl:w-24' />
-              <p className='text-[6px] font-bold xs:text-[8px] lg:text-[10px] xl:text-xs'>
+              <img src={stars} alt='' className='w-16  md:w-20 xl:w-24' />
+              <p className='text-[7.2px] font-bold xs:text-[8px] lg:text-[10px] xl:text-xs'>
                 (1.2k)
               </p>
             </div>
           </div>
-          <h4 className='text-[7px] mt-1 font-bold text-gray-600 xs:text-[10px] lg:text-xs  xl:text-base'>
-            <span>N</span>2,250,000
+          <h4 className='text-[9.4px] font-bold xs:text-xs md:text-base  xl:text-2xl'>
+            <span>$</span>
+            {product.price}
           </h4>
         </div>
         <div className='h-5 md:h-6 lg:h-8'>

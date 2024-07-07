@@ -16,10 +16,10 @@ const Header = () => {
   return (
     <header
       className={cn(
-        'grid  gap-6 fixed py-4 w-full top-0 left-0 px-4 z-20 bg-white ',
-        isDesktop
-          ? 'flex items-center justify-between gap-10 lg:px-12 xl:px-16'
-          : 'grid-rows-2 grid-cols-2'
+        'grid  gap-6 fixed py-4 w-full top-0 left-0 px-4 z-20 bg-white lg:flex lg:items-center lg:justify-between lg:gap-10 lg:px-12 xl:px-16'
+        // isDesktop
+        //   ? 'flex items-center justify-between gap-10 lg:px-12 xl:px-16'
+        //   : 'grid-rows-2 grid-cols-2'
       )}>
       <div>
         <Logo variant='header' />
