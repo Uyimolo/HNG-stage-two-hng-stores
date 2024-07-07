@@ -40,7 +40,7 @@ const SocialsSection = [
 ];
 
 const footerParagraph =
-  'text-gray text-[8px] xs:text-[10px] md:text-xs lg:text-base ';
+  'text-white text-[8px] xs:text-[10px] md:text-xs lg:text-base ';
 
 const headingClass =
   'mb-3 text-xs font-bold font-nunito text-white xs:text-base md:text-xl lg:text-2xl';
@@ -53,7 +53,7 @@ const Footer = () => {
         {/* logo and address*/}
         <div className='space-y-2'>
           <Logo variant='footer' />
-          <p className='text-gray text-[7.5px] xs:text-[10px] md:text-base lg:text-2xl '>
+          <p className='text-white text-[7.5px] xs:text-[10px] md:text-base lg:text-2xl '>
             4 Banana Street,
             <br /> Yaba Lagos State, Nigeria.
           </p>
@@ -96,7 +96,7 @@ const Footer = () => {
                   <img
                     src={paymentPlatform.icon}
                     alt={paymentPlatform.platform}
-                    className='w-[11px]'
+                    className='w-[11px] lg:w-4'
                   />
                 ))}
               </div>
@@ -110,7 +110,7 @@ const Footer = () => {
                   <img
                     src={social.icon}
                     alt={social.platform}
-                    className='w-[11px]'
+                    className='w-[11px] lg:w-4'
                   />
                 ))}
               </div>

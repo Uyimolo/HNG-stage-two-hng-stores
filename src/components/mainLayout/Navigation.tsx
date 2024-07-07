@@ -12,7 +12,7 @@ const Navigation = ({ showNav, setShowNav }: NavigationProps) => {
   const isDesktop = useMediaQuery({ minWidth: 1024 });
   const navigationItems = [
     { label: 'Home', path: '/' },
-    { label: 'Products', path: '/products' },
+    { label: 'Products', path: '/' },
     { label: 'Services', path: '' },
     { label: 'Cart', path: '/cart' },
   ];

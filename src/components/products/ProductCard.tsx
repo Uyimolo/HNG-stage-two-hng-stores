@@ -1,8 +1,6 @@
 import stars from '../../assets/images/stars.png';
 import Button from '../reusables/Button';
 import { Product } from '../../types/types';
-import view from '../../assets/icons/eye-svgrepo-com.svg';
-import { Link } from 'react-router-dom';
 const ProductCard = ({ product }: { product: Product }) => {
   return (
     <div className='bg-white rounded-[5px] overflow-hidden group  border border-gray shadow-md lg:rounded-[12px]'>
@@ -13,16 +11,6 @@ const ProductCard = ({ product }: { product: Product }) => {
           alt=''
           className='top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 absolute  w-full object-contain aspect-square'
         />
-
-        <Link
-          to={`/products/${product.id}`}
-          className='w-fit h-fit hidden group-hover:block'>
-          <img
-            src={view}
-            alt='view product'
-            className='absolute w-[10%] left-2 top-2 cursor-pointer'
-          />
-        </Link>
       </div>
 
       {/* product information */}
@@ -47,10 +35,10 @@ const ProductCard = ({ product }: { product: Product }) => {
             {product.price}
           </h4>
         </div>
-        <div className='h-5 md:h-6 lg:h-8'>
+        <div className='h-5 md:h-6 lg:h-10'>
           <Button
             variant='primary'
-            className='text-[8px] min-w-full h-5 hidden group-hover:block md:h-6 lg:min-w-full lg:h-8'>
+            className='text-[8px] min-w-full h-5 hidden group-hover:block md:h-6 lg:min-w-full lg:h-10'>
             ADD TO CART
           </Button>
         </div>
