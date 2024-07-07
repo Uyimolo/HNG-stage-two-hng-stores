@@ -1,9 +1,9 @@
 import { NavLink } from 'react-router-dom';
 import Button from '../reusables/Button';
-import { motion } from 'framer-motion';
 import closeNav from '../../assets/icons/close.svg';
 import { useMediaQuery } from 'react-responsive';
-// import { cn } from '../../utilities/cn';
+import { useEffect } from 'react';
+import { cn } from '../../utilities/cn';
 interface NavigationProps {
   showNav: boolean;
   setShowNav: React.Dispatch<React.SetStateAction<boolean>>;
@@ -13,26 +13,20 @@ const Navigation = ({ showNav, setShowNav }: NavigationProps) => {
   const navigationItems = [
     { label: 'Home', path: '/' },
     { label: 'Products', path: '/products' },
-    { label: 'Services', path: '/services' },
+    { label: 'Services', path: '' },
     { label: 'Cart', path: '/cart' },
   ];
 
-  const navVariants = {
-    hidden: {
-      x: !isDesktop ? '-100%' : 0,
-    },
-    visible: {
-      x: !isDesktop ? 0 : 0,
-    },
-  };
+  useEffect(() => {
+    isDesktop && setShowNav(false);
+  }, [isDesktop, setShowNav]);
 
   return (
-    <motion.div
-      variants={navVariants}
-      initial='hidden'
-      animate={showNav ? 'visible' : ''}
-      transition={{ duration: 0.4 }}
-      className='w-[199px] border absolute top-1/2 block z-10 border-primary bg-white lg:relative lg:translate-x-0 lg:top-0 lg:border-none lg:w-auto'>
+    <div
+      className={cn(
+        'w-[199px] border absolute  block z-10 border-primary bg-white lg:relative lg:translate-x-0 lg:top-0 lg:border-none lg:w-auto',
+        showNav ? 'top-1/2 block' : 'hidden lg:block'
+      )}>
       <img
         src={closeNav}
         alt=''
@@ -61,7 +55,7 @@ const Navigation = ({ showNav, setShowNav }: NavigationProps) => {
         <Button variant='outline'>Log in</Button>
         <Button variant='primary'>Sign up</Button>
       </div>
-    </motion.div>
+    </div>
   );
 };
 

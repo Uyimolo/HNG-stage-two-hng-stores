@@ -12,13 +12,14 @@ const Button = ({ variant, className, children }: ButtonProps) => {
   if (variant === 'primary') {
     buttonClass = 'bg-primary text-white hover:bg-primary/85';
   } else if (variant === 'outline') {
-    buttonClass =
-      'bg-white border-primary hover:bg-primary hover:text-white';
+    buttonClass = 'bg-white border border-primary hover:bg-primary hover:text-white';
+  } else if (variant === 'secondary') {
+    buttonClass = 'bg-orange';
   }
   return (
     <button
       className={cn(
-        'border border-green rounded-[6px] text-[15px] lg:text-xs h-[31px] w-full min-w-[134px] max-w-[134px] transition duration-100 lg:max-w-[83px] lg:min-w-[83px]',
+        'rounded-[6px] text-xs lg:text-xs h-[31px] w-full min-w-[134px] max-w-[134px] transition duration-100 lg:max-w-[83px] lg:min-w-[83px]',
         buttonClass,
         className
       )}>
