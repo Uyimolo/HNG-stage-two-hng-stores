@@ -8,6 +8,7 @@ import { useMediaQuery } from 'react-responsive';
 import { cn } from '../../utilities/cn';
 import Button from '../reusables/Button';
 import cartIcon from '../../assets/icons/cart.svg';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   const [showNav, setShowNav] = useState(false);
@@ -17,9 +18,6 @@ const Header = () => {
     <header
       className={cn(
         'grid  gap-6 fixed py-4 w-full top-0 left-0 px-4 z-20 bg-white lg:flex lg:items-center lg:justify-between lg:gap-10 lg:px-12 xl:px-16'
-        // isDesktop
-        //   ? 'flex items-center justify-between gap-10 lg:px-12 xl:px-16'
-        //   : 'grid-rows-2 grid-cols-2'
       )}>
       <div>
         <Logo variant='header' />
@@ -35,12 +33,13 @@ const Header = () => {
       {/* -----icons-------- */}
 
       <div className='flex w-fit order-2 justify-self-end lg:order-4 space-x-2'>
-        <img
-          src={cartIcon}
-          alt=''
-          className='hidden min-w-[22px] w-[22px] lg:block'
-        />
-
+        <Link to='/cart'>
+          <img
+            src={cartIcon}
+            alt=''
+            className='hidden min-w-[22px] w-[22px] lg:block'
+          />
+        </Link>
         <img
           src={hamburgerIcon}
           className='w-[22px] lg:hidden '
