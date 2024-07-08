@@ -1,15 +1,14 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import MainLayout from "./layout/MainLayout";
 import Products from "./routes/Products";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import Cart from "./routes/Cart";
 import "./index.css";
 import Checkout from "./routes/Checkout";
 import Success from "./routes/Success";
 import NotFound from "./routes/NotFound";
+import CartProvider from "./context/CartProvider";
 
 function App() {
-  const queryClient = new QueryClient();
 
   const router = createBrowserRouter([
     {
@@ -25,9 +24,9 @@ function App() {
     { path: "*", element: <NotFound /> },
   ]);
   return (
-    <QueryClientProvider client={queryClient}>
+    <CartProvider>
       <RouterProvider router={router} />
-    </QueryClientProvider>
+      </CartProvider>
   );
 }
 

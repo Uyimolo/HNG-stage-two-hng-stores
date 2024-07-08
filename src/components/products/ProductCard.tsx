@@ -1,7 +1,15 @@
 import stars from "../../assets/images/stars.png";
 import Button from "../reusables/Button";
-import { Product } from "../../types/types";
+import { CartState, Product } from "../../types/types";
+import { useContext } from "react";
+import CartContext from "../../context/CartContext";
 const ProductCard = ({ product }: { product: Product }) => {
+  
+  const { addItemToCart } = useContext<CartState>(CartContext)
+
+
+  
+  
   return (
     <div className="group overflow-hidden rounded-[5px] border border-gray bg-white shadow-md lg:rounded-[12px]">
       {/* product image */}
@@ -35,7 +43,7 @@ const ProductCard = ({ product }: { product: Product }) => {
             {product.price}
           </h4>
         </div>
-        <div className="h-6 md:h-6 lg:h-8 xl:h-10">
+        <div className="h-6 md:h-6 lg:h-8 xl:h-10" onClick={() => addItemToCart(product)}>
           <Button
             variant="primary"
             className="hidden h-6 min-w-full group-hover:block md:h-6 lg:h-8 lg:min-w-full xl:h-10"

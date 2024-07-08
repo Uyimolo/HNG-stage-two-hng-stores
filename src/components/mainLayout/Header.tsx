@@ -3,16 +3,18 @@ import hamburgerIcon from "../../assets/icons/ic_baseline-menu.svg";
 import notificationIcon from "../../assets/icons/zondicons_notification.svg";
 import Search from "./Search";
 import Navigation from "./Navigation";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useMediaQuery } from "react-responsive";
 import { cn } from "../../utilities/cn";
 import Button from "../reusables/Button";
 import cartIcon from "../../assets/icons/cart.svg";
 import { Link } from "react-router-dom";
+import CartContext from "../../context/CartContext";
 
 const Header = () => {
   const [showNav, setShowNav] = useState(false);
   const isDesktop = useMediaQuery({ minWidth: 1024 });
+  const {cartItems} = useContext(CartContext)
 
   return (
     <header
@@ -41,8 +43,8 @@ const Header = () => {
             alt=""
             className="hidden w-[22px] min-w-[22px] lg:block"
           />
-          <p className="absolute -right-1 -top-2 grid aspect-square w-3 place-content-center rounded-full bg-primary text-[8px] text-white">
-            1
+          <p className="absolute -right-1 -top-2 grid aspect-square w-4 place-content-center rounded-full bg-primary text-[12px] text-white">
+            {cartItems.length}
           </p>
         </Link>
         <img
