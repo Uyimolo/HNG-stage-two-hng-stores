@@ -18,8 +18,14 @@ const Headliner = () => {
             </h2>
             <div>
               <h1 className='text-[2.6vw]'>IPHONE 15 PRO MAX</h1>
-              <h3 className='text-[2.4vw]'>N 3,500,000</h3>
-              <h3 className='text-[2.4vw]'>N 2,500,00</h3>
+              <h3 className='text-[2.4vw] line-through decoration-yellow'>
+                <span className='line-through decoration-double'>N</span>{' '}
+                3,500,000
+              </h3>
+              <h3 className='text-[2.4vw]'>
+                <span className='line-through decoration-double'>N</span>{' '}
+                2,500,00
+              </h3>
             </div>
             <h2 className='text-[2.2vw] text-center w-fit px-1 bg-orange'>
               T&C Applies

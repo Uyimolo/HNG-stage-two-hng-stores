@@ -11,7 +11,7 @@ const CartItem = () => {
       <div className='flex justify-between gap-2 border-t-2 border-yellow pt-1 lg:py-12'>
         {/* column 1 */}
         <div className='flex gap-2 lg:gap-8'>
-          <div className='space-y-8 w-fit md:space-y-12'>
+          <div className='space-y-16 w-fit md:space-y-12'>
             <img src={watch} alt='' className='w-16 md:w-24 xl:w-32' />
             <div className='flex space-x-1 h-fit'>
               <img src={bin} alt='' className='w-[14px] md:w-5' />
@@ -71,19 +71,19 @@ const CartItem = () => {
 
         {/* column 3 */}
         <div className='flex flex-col justify-between justify-self-end w-fit'>
-          <p className='text-[8.5px] xs:text-xs md:text-sm xl:text-base font-extrabold'>
-            N346,000
+          <p className='text-xs xs:text-xs md:text-sm xl:text-base font-extrabold'>
+            <span className='line-through decoration-double'>N</span>346,000
           </p>
 
           {/* quantity */}
           <div className='flex space-x-1'>
-            <button className=' bg-primary  w-3 h-3 text-white grid place-content-center text-[10px] md:w-5 md:h-5'>
+            <button className=' bg-primary  w-4 h-4 text-white grid place-content-center text-[14px] md:w-5 md:h-5'>
               -
             </button>
-            <p className='text-[8.5px] xs:text-xs lg:text-sm xl:text-base font-bold'>
+            <p className='text-xs xs:text-xs lg:text-sm xl:text-base font-bold'>
               1
             </p>
-            <button className=' bg-primary  w-3 h-3 text-white grid place-content-center text-[10px] md:w-5 md:h-5'>
+            <button className=' bg-primary  w-4 h-4 text-white grid place-content-center text-[14px] md:w-5 md:h-5'>
               +
             </button>
           </div>

@@ -27,7 +27,7 @@ const Header = () => {
       <Navigation showNav={showNav} setShowNav={setShowNav} />
       {showNav && (
         <div
-          className='fixed top-0 left-0 h-screen bottom-0 w-full bg-neutral-500/10 lg:hidden'
+          className='fixed top-0 left-0 h-screen bottom-0 w-full bg-neutral-700/10 lg:hidden'
           onClick={() => setShowNav(false)}></div>
       )}
       {/* -----icons-------- */}

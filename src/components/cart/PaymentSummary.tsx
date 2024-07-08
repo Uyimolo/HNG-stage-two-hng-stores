@@ -16,7 +16,9 @@ const PaymentSummary = ({ variant }: { variant: 'checkout' | 'cart' }) => {
       <div className='space-y-2 text-xs xs:text-sm md:text-base xl:text-[text-18] pt-2 border-t-2 border-yellow px-4'>
         <div className='flex justify-between '>
           <p>Items(1)</p>
-          <p>N346,000</p>
+          <p>
+            <span className='line-through decoration-double'>N</span>346,000
+          </p>
         </div>
 
         <div className='flex justify-between'>
@@ -28,10 +30,14 @@ const PaymentSummary = ({ variant }: { variant: 'checkout' | 'cart' }) => {
       {/* THIRD SECTION */}
       <div className='flex justify-between pt-2 border-t-2 border-yellow text-xs xs:text-sm md:text-base xl:text-[text-18] px-4'>
         <p>Total</p>
-        <p>N346,600</p>
+        <p>
+          <span className='line-through decoration-double'>N</span>346,600
+        </p>
       </div>
 
-      <Link to={variant === "cart" ? '/checkout' : ''} className={cn('px-4 block', variant === 'checkout' ? 'pt-20' : '')}>
+      <Link
+        to={variant === 'cart' ? '/checkout' : ''}
+        className={cn('px-4 block', variant === 'checkout' ? 'pt-20' : '')}>
         <Button variant='secondary' className='min-w-full mt-8 lg:min-w-full'>
           {variant === 'checkout' ? 'Order Now' : 'Continue to Checkout'}
         </Button>

@@ -68,7 +68,9 @@ const Footer = () => {
             {/* content */}
             <div className=''>
               {categoriesList.map((category) => (
-                <p className={footerParagraph}>{category.category}</p>
+                <p key={category.category} className={footerParagraph}>
+                  {category.category}
+                </p>
               ))}
             </div>
           </div>
@@ -80,7 +82,9 @@ const Footer = () => {
             {/* content */}
             <div className=''>
               {helpSection.map((help) => (
-                <p key={help.name} className={footerParagraph}>{help.name}</p>
+                <p key={help.name} className={footerParagraph}>
+                  {help.name}
+                </p>
               ))}
             </div>
           </div>
