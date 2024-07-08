@@ -13,7 +13,7 @@ const Headliner = () => {
 
           {/* text */}
           <div className='text-white font-nunito space-y-3 -translate-x-'>
-            <h2 className='text-[3vw] bg-orange w-fit px-1'>
+            <h2 className='text-[3vw] bg-orange text-nowrap w-fit px-1'>
               <span className='italic '>70%</span> DISCOUNT
             </h2>
             <div>
@@ -27,7 +27,7 @@ const Headliner = () => {
                 2,500,00
               </h3>
             </div>
-            <h2 className='text-[2.2vw] text-center w-fit px-1 bg-orange'>
+            <h2 className='text-[2.2vw] text-nowrap text-center w-fit px-1 bg-orange'>
               T&C Applies
             </h2>
           </div>
