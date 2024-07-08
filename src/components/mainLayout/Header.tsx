@@ -1,14 +1,14 @@
-import Logo from '../Logo';
-import hamburgerIcon from '../../assets/icons/ic_baseline-menu.svg';
-import notificationIcon from '../../assets/icons/zondicons_notification.svg';
-import Search from './Search';
-import Navigation from './Navigation';
-import { useState } from 'react';
-import { useMediaQuery } from 'react-responsive';
-import { cn } from '../../utilities/cn';
-import Button from '../reusables/Button';
-import cartIcon from '../../assets/icons/cart.svg';
-import { Link } from 'react-router-dom';
+import Logo from "../Logo";
+import hamburgerIcon from "../../assets/icons/ic_baseline-menu.svg";
+import notificationIcon from "../../assets/icons/zondicons_notification.svg";
+import Search from "./Search";
+import Navigation from "./Navigation";
+import { useState } from "react";
+import { useMediaQuery } from "react-responsive";
+import { cn } from "../../utilities/cn";
+import Button from "../reusables/Button";
+import cartIcon from "../../assets/icons/cart.svg";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [showNav, setShowNav] = useState(false);
@@ -17,50 +17,55 @@ const Header = () => {
   return (
     <header
       className={cn(
-        'grid  gap-6 fixed py-4 w-full top-0 left-0 px-4 z-20 bg-white lg:flex lg:items-center lg:justify-between lg:gap-10 lg:px-12 xl:px-16'
-      )}>
+        "fixed left-0 top-0 z-20 grid w-full gap-6 bg-white px-4 py-4 lg:flex lg:items-center lg:justify-between lg:gap-10 lg:px-12 xl:px-16",
+      )}
+    >
       <div>
-        <Logo variant='header' />
+        <Logo variant="header" />
       </div>
       {/* nav component */}
 
       <Navigation showNav={showNav} setShowNav={setShowNav} />
       {showNav && (
         <div
-          className='fixed top-0 left-0 h-screen bottom-0 w-full bg-neutral-700/10 lg:hidden'
-          onClick={() => setShowNav(false)}></div>
+          className="fixed bottom-0 left-0 top-0 h-screen w-full bg-neutral-700/10 lg:hidden"
+          onClick={() => setShowNav(false)}
+        ></div>
       )}
       {/* -----icons-------- */}
 
-      <div className='flex w-fit order-2 justify-self-end lg:order-4 space-x-2'>
-        <Link to='/cart'>
+      <div className="order-2 flex w-fit space-x-2 justify-self-end lg:order-4">
+        <Link to="/cart" className="relative hidden lg:block">
           <img
             src={cartIcon}
-            alt=''
-            className='hidden min-w-[22px] w-[22px] lg:block'
+            alt=""
+            className="hidden w-[22px] min-w-[22px] lg:block"
           />
+          <p className="absolute -right-1 -top-2 grid aspect-square w-3 place-content-center rounded-full bg-primary text-[8px] text-white">
+            1
+          </p>
         </Link>
         <img
           src={hamburgerIcon}
-          className='w-[22px] lg:hidden '
-          alt='navigation menu toggle button'
+          className="w-[22px] lg:hidden"
+          alt="navigation menu toggle button"
           onClick={() => setShowNav(true)}
         />
 
         <img
           src={notificationIcon}
-          alt='notification icon'
-          className='min-w-[22px] '
+          alt="notification icon"
+          className="min-w-[22px]"
         />
       </div>
       {/* search component */}
       <Search
-        className={cn('', isDesktop ? 'order-3' : 'col-span-2 order-4')}
+        className={cn("", isDesktop ? "order-3" : "order-4 col-span-2")}
       />
 
-      <div className=' space-x-2 items-center hidden order-5 lg:flex'>
-        <Button variant='outline'>Log in</Button>
-        <Button variant='primary'>Sign up</Button>
+      <div className="order-5 hidden items-center space-x-2 lg:flex">
+        <Button variant="outline">Log in</Button>
+        <Button variant="primary">Sign up</Button>
       </div>
     </header>
   );

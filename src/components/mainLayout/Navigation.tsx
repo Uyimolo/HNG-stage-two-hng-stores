@@ -1,9 +1,9 @@
-import { NavLink } from 'react-router-dom';
-import Button from '../reusables/Button';
-import closeNav from '../../assets/icons/close.svg';
-import { useMediaQuery } from 'react-responsive';
-import { useEffect } from 'react';
-import { cn } from '../../utilities/cn';
+import { NavLink } from "react-router-dom";
+import Button from "../reusables/Button";
+import closeNav from "../../assets/icons/close.svg";
+import { useMediaQuery } from "react-responsive";
+import { useEffect } from "react";
+import { cn } from "../../utilities/cn";
 interface NavigationProps {
   showNav: boolean;
   setShowNav: React.Dispatch<React.SetStateAction<boolean>>;
@@ -11,10 +11,10 @@ interface NavigationProps {
 const Navigation = ({ showNav, setShowNav }: NavigationProps) => {
   const isDesktop = useMediaQuery({ minWidth: 1024 });
   const navigationItems = [
-    { label: 'Home', path: '/' },
-    { label: 'Products', path: '/' },
-    { label: 'Services', path: '' },
-    { label: 'Cart', path: '/cart' },
+    { label: "Home", path: "/" },
+    { label: "Products", path: "/" },
+    { label: "Services", path: "" },
+    { label: "Cart", path: "/cart" },
   ];
 
   useEffect(() => {
@@ -24,36 +24,44 @@ const Navigation = ({ showNav, setShowNav }: NavigationProps) => {
   return (
     <div
       className={cn(
-        'w-[199px] border absolute  block z-10 border-primary bg-white lg:relative lg:translate-x-0 lg:top-0 lg:border-none lg:w-auto',
-        showNav ? 'top-1/2 block' : 'hidden lg:block'
-      )}>
+        "absolute z-10 block w-[199px] border border-primary bg-white lg:relative lg:top-0 lg:w-auto lg:translate-x-0 lg:border-none",
+        showNav ? "top-1/2 block" : "hidden lg:block",
+      )}
+    >
       <img
         src={closeNav}
-        alt=''
-        className='w-full max-w-[16px] absolute top-4 right-4 lg:hidden'
+        alt=""
+        className="absolute right-4 top-4 w-full max-w-[16px] lg:hidden"
         onClick={() => setShowNav(false)}
       />
-      <nav className='flex flex-col items-center space-y-2 pt-16 pb-6 lg:flex-row lg:p-0  lg:space-y-0'>
+      <nav className="flex flex-col items-center space-y-2 pb-6 pt-16 lg:flex-row lg:space-y-0 lg:p-0">
         {navigationItems.map((nav) => (
           <NavLink
             key={nav.label}
             to={nav.path}
-            className='w-fit'
-            onClick={() => setShowNav(false)}>
+            className="w-fit"
+            onClick={() => setShowNav(false)}
+          >
             {isDesktop ? (
-              <p className={nav.label === 'Cart' ? 'hidden' : 'px-4 p-[18px]'}>
+              <p
+                className={
+                  nav.label === "Cart"
+                    ? "hidden"
+                    : "px-4 lg:px-2 lg:text-sm xl:text-base"
+                }
+              >
                 {nav.label}
               </p>
             ) : (
-              <Button variant='outline'>{nav.label}</Button>
+              <Button variant="outline">{nav.label}</Button>
             )}
           </NavLink>
         ))}
       </nav>
 
-      <div className='flex flex-col items-center space-y-2 py-6 border-t-2 border-yellow lg:hidden'>
-        <Button variant='outline'>Log in</Button>
-        <Button variant='primary'>Sign up</Button>
+      <div className="flex flex-col items-center space-y-2 border-t-2 border-yellow py-6 lg:hidden">
+        <Button variant="outline">Log in</Button>
+        <Button variant="primary">Sign up</Button>
       </div>
     </div>
   );

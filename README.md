@@ -1,30 +1,33 @@
-# React + TypeScript + Vite
+## HNG Stores - Stage 2 Project (README)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is an online store built with React and TypeScript, developed for the HNG Internship Stage 2 task.
 
-Currently, two official plugins are available:
+**Features:**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Product Listing:** Browse through a variety of products offered by the store.
+- **Responsive Design:** The store adapts seamlessly to different screen sizes, ensuring a great user experience on all devices.
+- **Classy and Intuitive UI:** The design prioritizes aesthetics and ease of use, making navigation and product exploration enjoyable.
+- **Cart (Static):** View and manage the items you'd like to purchase (currently non-functional).
+- **Checkout (Static):** Proceed to checkout (currently non-functional).
+- **Routing with React Router:** Manages navigation between different sections of the store.
+- **TypeScript & React:** Utilizes TypeScript for type safety and React for building dynamic web experiences.
+- **Developed using Vite:** Leverages the speed and efficiency of Vite for development.
 
-## Expanding the ESLint configuration
+**Note:** Cart and Checkout functionalities are currently static for demonstration purposes.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+We aimed to create a visually appealing and user-friendly online store that provides a smooth shopping experience.
 
-- Configure the top-level `parserOptions` property like this:
+**Tech Stack:**
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+- React
+- TypeScript
+- React Router
+- Vite
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+**Getting Started (For Developers):**
+
+1. Clone this repository.
+2. Install dependencies: `npm install`
+3. Run the development server: `npm run dev`
+
+This will start the development server and open the application in your browser.

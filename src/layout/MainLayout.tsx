@@ -1,10 +1,10 @@
-import { Outlet, ScrollRestoration } from 'react-router-dom';
-import Header from '../components/mainLayout/Header';
-import Footer from '../components/mainLayout/Footer';
+import { Outlet, ScrollRestoration } from "react-router-dom";
+import Header from "../components/mainLayout/Header";
+import Footer from "../components/mainLayout/Footer";
 
 const MainLayout = () => {
   return (
-    <div className='pt-6 overflow-hidden'>
+    <div className="overflow-hidden pt-6">
       <Header />
       <Outlet />
       <Footer />
