@@ -14,7 +14,7 @@ const Cart = () => {
         <CartItem />
       </div>
 
-      <div className='grid lg:mt-10'>
+      <div className='grid mt-5 lg:mt-10'>
         <PaymentSummary variant='cart'/>
       </div>
     </div>

@@ -11,6 +11,8 @@ const ProductCard = ({ product }: { product: Product }) => {
           alt=''
           className='top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 absolute  w-full object-contain aspect-square'
         />
+
+        
       </div>
 
       {/* product information */}

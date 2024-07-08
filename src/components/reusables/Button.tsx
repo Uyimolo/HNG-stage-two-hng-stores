@@ -19,7 +19,7 @@ const Button = ({ variant, className, children }: ButtonProps) => {
   return (
     <button
       className={cn(
-        'rounded-[6px] text-xs lg:text-xs h-[31px] w-full min-w-[134px] max-w-[134px] transition duration-100 lg:max-w-[83px] lg:min-w-[83px]',
+        'rounded-[6px] grid place-content-center text-xs lg:text-base h-[31px] w-full min-w-[134px] max-w-[134px] transition duration-100 lg:max-w-[83px] lg:min-w-[83px]',
         buttonClass,
         className
       )}>

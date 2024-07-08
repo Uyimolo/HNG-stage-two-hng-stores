@@ -27,14 +27,14 @@ const Checkout = () => {
           !deets.value3 ? (
             <div className=' border border-gray shadow-md ' key={deets.title}>
               <div className='flex justify-between px-2 py-3 lg:px-4'>
-                <h3 className='text-xs xs:text-sm md:text-base xl:text-[text-18] font-bold '>
+                <h3 className='text-sm xs:text-sm md:text-base xl:text-[text-18] font-bold '>
                   {deets.title}
                 </h3>
                 <p className='cursor-pointer text-primary text-[10px] xs:text-xs md:text-sm xl:text-base'>
                   Change
                 </p>
               </div>
-              <div className='text-[10px] xs:text-xs md:text-sm xl:text-base border-yellow border-t-2 px-2 lg:px-4 pt-4 pb-12'>
+              <div className='text-[12px] xs:text-xs md:text-sm xl:text-base border-yellow border-t-2 px-2 lg:px-4 pt-4 pb-12'>
                 <p>{deets.value1}</p>
                 <p>{deets.value2}</p>
               </div>
@@ -42,14 +42,14 @@ const Checkout = () => {
           ) : (
             <div className=' border border-gray shadow-md ' key={deets.title}>
               <div className='flex px-2 lg:px-4 py-3 justify-between items-center'>
-                <h3 className='text-xs xs:text-sm md:text-base xl:text-[text-18] font-bold '>
+                <h3 className='text-sm xs:text-sm md:text-base xl:text-[text-18] font-bold '>
                   {deets.title}
                 </h3>
                 <p className='cursor-pointer text-primary text-[10px] xs:text-xs md:text-sm xl:text-base'>
                   Change
                 </p>
               </div>
-              <div className='text-[10px] xs:text-xs md:text-sm xl:text-base border-yellow border-t-2 px-2 lg:px-4 pt-4 pb-12 space-y-2'>
+              <div className='text-xs xs:text-xs md:text-sm xl:text-base border-yellow border-t-2 px-2 lg:px-4 pt-4 pb-12 space-y-2'>
                 <div className='flex space-x-2 items-center'>
                   <div className='w-2 aspect-square border border-gray rounded-full bg-primary'></div>
                   <p>{deets.value1}</p>

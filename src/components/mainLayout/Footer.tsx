@@ -40,7 +40,7 @@ const SocialsSection = [
 ];
 
 const footerParagraph =
-  'text-white text-[8px] xs:text-[10px] md:text-xs lg:text-base ';
+  'text-white text-[11px] xs:text-[12px] md:text-sm lg:text-base ';
 
 const headingClass =
   'mb-3 text-xs font-bold font-nunito text-white xs:text-base md:text-xl lg:text-2xl';
@@ -49,18 +49,18 @@ const Footer = () => {
   return (
     <footer className='bg-primary'>
       {/* footer info */}
-      <div className=' px-4 py-12 grid grid-cols-[40%,1fr] lg:px-12 xl:px-16'>
+      <div className=' px-4 py-12 grid grid-cols-[35%,1fr] lg:px-12 xl:px-16'>
         {/* logo and address*/}
         <div className='space-y-2'>
           <Logo variant='footer' />
-          <p className='text-white text-[7.5px] xs:text-[10px] md:text-base lg:text-2xl '>
+          <p className='text-white text-[12px] xs:text-[12px] md:text-base lg:text-2xl '>
             4 Banana Street,
             <br /> Yaba Lagos State, Nigeria.
           </p>
         </div>
 
         {/* other information */}
-        <div className='grid grid-cols-2 lg:grid-cols-3'>
+        <div className='grid grid-cols-2  gap-x-2 gap-y-4 lg:grid-cols-3'>
           {/* categories */}
           <div className=''>
             {/* heading */}
@@ -80,7 +80,7 @@ const Footer = () => {
             {/* content */}
             <div className=''>
               {helpSection.map((help) => (
-                <p className={footerParagraph}>{help.name}</p>
+                <p key={help.name} className={footerParagraph}>{help.name}</p>
               ))}
             </div>
           </div>
@@ -96,7 +96,7 @@ const Footer = () => {
                   <img
                     src={paymentPlatform.icon}
                     alt={paymentPlatform.platform}
-                    className='w-[11px] lg:w-4'
+                    className='w-[14px] lg:w-4'
                   />
                 ))}
               </div>
@@ -110,7 +110,7 @@ const Footer = () => {
                   <img
                     src={social.icon}
                     alt={social.platform}
-                    className='w-[11px] lg:w-4'
+                    className='lg:w-4'
                   />
                 ))}
               </div>
@@ -125,7 +125,7 @@ const Footer = () => {
                 <img
                   src={social.icon}
                   alt={social.platform}
-                  className='w-[11px]'
+                  className='w-[14px]'
                 />
               ))}
             </div>
