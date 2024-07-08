@@ -2,18 +2,20 @@ import { NavLink } from "react-router-dom";
 import Button from "../reusables/Button";
 import closeNav from "../../assets/icons/close.svg";
 import { useMediaQuery } from "react-responsive";
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
 import { cn } from "../../utilities/cn";
+import CartContext from "../../context/CartContext";
 interface NavigationProps {
   showNav: boolean;
   setShowNav: React.Dispatch<React.SetStateAction<boolean>>;
 }
 const Navigation = ({ showNav, setShowNav }: NavigationProps) => {
   const isDesktop = useMediaQuery({ minWidth: 1024 });
+  const { cartItems } = useContext(CartContext);
   const navigationItems = [
     { label: "Home", path: "/" },
     { label: "Products", path: "/" },
-    { label: "Services", path: "" },
+    { label: "Services", path: "/services" },
     { label: "Cart", path: "/cart" },
   ];
 
@@ -53,7 +55,10 @@ const Navigation = ({ showNav, setShowNav }: NavigationProps) => {
                 {nav.label}
               </p>
             ) : (
-              <Button variant="outline">{nav.label}</Button>
+              <Button variant="outline">
+                {nav.label}{" "}
+                {`${nav.label === "Cart" ? `(${cartItems.length.toString()})` : ""}`}
+              </Button>
             )}
           </NavLink>
         ))}

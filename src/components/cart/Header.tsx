@@ -4,7 +4,7 @@ import triangleFrame from "../../assets/images/yellow-triangle.png";
 
 const Header = () => {
   return (
-    <div className="relative overflow-hidden bg-primary lg:order-2">
+    <div className="relative lg:aspect-[2/2] bg-primary lg:order-2">
       <img
         src={frame}
         alt=""
