@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import Button from "../reusables/Button";
 import closeNav from "../../assets/icons/close.svg";
 import { useMediaQuery } from "react-responsive";
@@ -11,10 +11,11 @@ interface NavigationProps {
   setShowNav: React.Dispatch<React.SetStateAction<boolean>>;
 }
 const Navigation = ({ showNav, setShowNav }: NavigationProps) => {
+  const location = useLocation();
   const isDesktop = useMediaQuery({ minWidth: 1024 });
   const { cartItems } = useContext(CartContext);
   const navigationItems = [
-    // { label: "Home", path: "/" },
+    { label: "Home", path: "/" },
     { label: "Products", path: "/" },
     { label: "Services", path: "/services" },
     { label: "Cart", path: "/cart" },
@@ -23,6 +24,13 @@ const Navigation = ({ showNav, setShowNav }: NavigationProps) => {
   useEffect(() => {
     isDesktop && setShowNav(false);
   }, [isDesktop, setShowNav]);
+
+  const isPathActive = (path: string, linkName: string) => {
+    if (linkName === "Products" ) {
+      return false;
+    }
+    return location.pathname === path;
+  };
 
   return (
     <motion.div
@@ -50,16 +58,19 @@ const Navigation = ({ showNav, setShowNav }: NavigationProps) => {
           >
             {isDesktop ? (
               <p
-                className={
-                  nav.label === "Cart"
-                    ? "hidden"
-                    : "px-4 hover:text-primary lg:px-2 lg:text-sm xl:text-base"
-                }
+                className={cn(
+                  "px-4 hover:text-primary lg:px-2 lg:text-sm xl:text-base",
+                  nav.label === "Cart" ? "hidden" : "",
+                  isPathActive(nav.path, nav.label) ? "text-primary" : "",
+                )}
               >
                 {nav.label}
               </p>
             ) : (
-              <Button variant="outline">
+              <Button
+                variant="outline"
+                className={isPathActive(nav.path, nav.label) ? "bg-primary text-white" : ""}
+              >
                 {nav.label}{" "}
                 {`${nav.label === "Cart" ? `(${cartItems.length.toString()})` : ""}`}
               </Button>

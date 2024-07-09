@@ -10,6 +10,7 @@ import linkedIn from "../../assets/images/linkedIn.svg";
 
 import { motion } from "framer-motion";
 import { cn } from "../../utilities/cn";
+import { Link } from "react-router-dom";
 
 const categoriesList = [
   { category: "Electronics" },
@@ -69,14 +70,15 @@ const Footer = () => {
             {/* heading */}
             <h5 className={headingClass}>Categories</h5>
             {/* content */}
-            <div className="">
+            <div className="flex flex-col gap-1">
               {categoriesList.map((category) => (
-                <p
+                <Link
+                  to="/"
                   key={category.category}
                   className={cn(footerParagraph, "hover:text-yellow")}
                 >
                   {category.category}
-                </p>
+                </Link>
               ))}
             </div>
           </div>
@@ -86,14 +88,15 @@ const Footer = () => {
             {/* heading */}
             <h5 className={headingClass}>Need help?</h5>
             {/* content */}
-            <div className="">
+            <div className="flex flex-col space-y-1">
               {helpSection.map((help) => (
-                <p
+                <Link
+                  to="/"
                   key={help.name}
                   className={cn(footerParagraph, "hover:text-yellow")}
                 >
                   {help.name}
-                </p>
+                </Link>
               ))}
             </div>
           </div>
@@ -107,6 +110,7 @@ const Footer = () => {
               <div className="flex gap-2">
                 {paymentSection.map((paymentPlatform) => (
                   <motion.img
+                    key={paymentPlatform.platform}
                     initial={{ scale: 1 }}
                     whileHover={{ scale: 1.5 }}
                     src={paymentPlatform.icon}
@@ -141,6 +145,7 @@ const Footer = () => {
             <div className="flex gap-2">
               {SocialsSection.map((social) => (
                 <motion.img
+                  key={social.platform}
                   initial={{ scale: 1 }}
                   whileHover={{ scale: 1.5 }}
                   src={social.icon}
