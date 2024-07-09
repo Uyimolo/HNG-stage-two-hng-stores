@@ -4,7 +4,6 @@ interface ButtonProps {
   variant: string;
   className?: string;
   children: React.ReactNode;
-  //   link?: string;
 }
 const Button = ({ variant, className, children }: ButtonProps) => {
   let buttonClass = "";

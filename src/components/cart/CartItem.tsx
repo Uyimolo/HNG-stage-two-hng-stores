@@ -1,9 +1,7 @@
-// import watch from "../../assets/images/smartwatch.png";
 import { useContext, useEffect, useState } from "react";
 import bin from "../../assets/icons/bin.svg";
 import { CartState, Product } from "../../types/types";
 import CartContext from "../../context/CartContext";
-// import thumbnail1 from "../../assets/images/thumbnail-1.png";
 const CartItem = ({ cartItem }: { cartItem: Product }) => {
   const { removeItemFromCart, updateItemQuantity } =
     useContext<CartState>(CartContext);

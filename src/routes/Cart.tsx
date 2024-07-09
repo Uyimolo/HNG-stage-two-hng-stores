@@ -4,6 +4,8 @@ import Header from "../components/cart/Header";
 import PaymentSummary from "../components/cart/PaymentSummary";
 import CartContext from "../context/CartContext";
 import { CartState } from "../types/types";
+import Button from "../components/reusables/Button";
+import { Link } from "react-router-dom";
 
 const Cart = () => {
   const { cartItems } = useContext<CartState>(CartContext);
@@ -19,11 +21,25 @@ const Cart = () => {
           </div>
         </div>
         {/* cart */}
-        <div className="min-h-2">
-          {cartItems?.map((cartItem) => (
-            <CartItem key={cartItem.id} cartItem={cartItem} />
-          ))}
-        </div>
+        {cartItems.length ? (
+          <div className="min-h-2">
+            {cartItems?.map((cartItem) => (
+              <CartItem key={cartItem.id} cartItem={cartItem} />
+            ))}
+          </div>
+        ) : (
+          <div className="grid min-h-[200px] place-content-center gap-4">
+            <p className="text-center text-xs font-bold xs:text-sm lg:text-base">
+              You have no products in your cart
+            </p>
+
+            <Link to="/">
+              <Button variant="primary" className="mx-auto lg:min-w-full">
+                Back to Home
+              </Button>
+            </Link>
+          </div>
+        )}
       </div>
 
       <div className="right-12 top-80 mt-4 grid w-full lg:fixed lg:hidden">
