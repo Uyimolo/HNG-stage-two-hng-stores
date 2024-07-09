@@ -26,7 +26,7 @@ const Navigation = ({ showNav, setShowNav }: NavigationProps) => {
   }, [isDesktop, setShowNav]);
 
   const isPathActive = (path: string, linkName: string) => {
-    if (linkName === "Products" ) {
+    if (linkName === "Products") {
       return false;
     }
     return location.pathname === path;
@@ -69,7 +69,11 @@ const Navigation = ({ showNav, setShowNav }: NavigationProps) => {
             ) : (
               <Button
                 variant="outline"
-                className={isPathActive(nav.path, nav.label) ? "bg-primary text-white" : ""}
+                className={
+                  isPathActive(nav.path, nav.label)
+                    ? "bg-primary text-white"
+                    : ""
+                }
               >
                 {nav.label}{" "}
                 {`${nav.label === "Cart" ? `(${cartItems.length.toString()})` : ""}`}

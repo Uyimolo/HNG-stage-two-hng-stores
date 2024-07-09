@@ -35,7 +35,7 @@ const ProductCard = ({ product }: { product: Product }) => {
             </div>
           </div>
           <h4 className="text-[12px] font-bold xs:text-xs md:text-sm xl:text-base">
-            <sup className="line-through decoration-double">N</sup>
+            <span className="line-through decoration-double">N</span>
             {product.price}
           </h4>
         </div>
