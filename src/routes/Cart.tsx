@@ -21,25 +21,30 @@ const Cart = () => {
           </div>
         </div>
         {/* cart */}
-        {cartItems.length ? (
-          <div className="min-h-2">
-            {cartItems?.map((cartItem) => (
-              <CartItem key={cartItem.id} cartItem={cartItem} />
-            ))}
-          </div>
-        ) : (
-          <div className="grid min-h-[200px] place-content-center gap-4">
-            <p className="text-center text-xs font-bold xs:text-sm lg:text-base">
-              You have no products in your cart
-            </p>
+        <div>
+          <h2 className="rounded-t-md border border-gray p-2 text-sm font-bold lg:p-4 lg:text-lg">
+            Cart ({cartItems.length})
+          </h2>
+          {cartItems.length ? (
+            <div className="min-h-2">
+              {cartItems?.map((cartItem) => (
+                <CartItem key={cartItem.id} cartItem={cartItem} />
+              ))}
+            </div>
+          ) : (
+            <div className="grid min-h-[200px] place-content-center gap-4">
+              <p className="text-center text-xs font-bold xs:text-sm lg:text-base">
+                You have no products in your cart
+              </p>
 
-            <Link to="/">
-              <Button variant="primary" className="mx-auto lg:min-w-full">
-                Back to Home
-              </Button>
-            </Link>
-          </div>
-        )}
+              <Link to="/">
+                <Button variant="primary" className="mx-auto lg:min-w-full">
+                  Back to Home
+                </Button>
+              </Link>
+            </div>
+          )}
+        </div>
       </div>
 
       <div className="right-12 top-80 mt-4 grid w-full lg:fixed lg:hidden">

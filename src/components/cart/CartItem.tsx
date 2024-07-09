@@ -19,7 +19,7 @@ const CartItem = ({ cartItem }: { cartItem: Product }) => {
   }, [count, cartItem.id]);
 
   return (
-    <div className="h-auto border border-gray border-t-yellow px-2 py-2 lg:px-4">
+    <div className="h-auto border border-gray border-t-yellow px-2 py-4 lg:px-4">
       <div className="flex justify-between gap-2 pt-1 lg:py-6">
         {/* column 1 */}
         <div className="flex gap-2 lg:gap-8">
