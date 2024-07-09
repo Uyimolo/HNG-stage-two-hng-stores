@@ -18,6 +18,13 @@ const CartProvider: React.FC<React.PropsWithChildren> = ({ children }) => {
     setCartItems((prevItems) => prevItems.filter((item) => item.id !== itemId));
   };
 
+  const updateItemQuantity = (itemId: number, newQuantity: number) => {
+    const updatedCartItems = cartItems.map((item) =>
+      item.id === itemId ? { ...item, quantity: newQuantity } : item,
+    );
+    setCartItems(updatedCartItems);
+  };
+
   const clearCart = () => {
     setCartItems([]);
   };
@@ -27,6 +34,7 @@ const CartProvider: React.FC<React.PropsWithChildren> = ({ children }) => {
     addItemToCart,
     removeItemFromCart,
     clearCart,
+    updateItemQuantity,
   };
 
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;

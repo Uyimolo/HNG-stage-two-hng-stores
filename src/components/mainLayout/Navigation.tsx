@@ -5,6 +5,7 @@ import { useMediaQuery } from "react-responsive";
 import { useContext, useEffect } from "react";
 import { cn } from "../../utilities/cn";
 import CartContext from "../../context/CartContext";
+import { motion } from "framer-motion";
 interface NavigationProps {
   showNav: boolean;
   setShowNav: React.Dispatch<React.SetStateAction<boolean>>;
@@ -13,7 +14,7 @@ const Navigation = ({ showNav, setShowNav }: NavigationProps) => {
   const isDesktop = useMediaQuery({ minWidth: 1024 });
   const { cartItems } = useContext(CartContext);
   const navigationItems = [
-    { label: "Home", path: "/" },
+    // { label: "Home", path: "/" },
     { label: "Products", path: "/" },
     { label: "Services", path: "/services" },
     { label: "Cart", path: "/cart" },
@@ -24,10 +25,13 @@ const Navigation = ({ showNav, setShowNav }: NavigationProps) => {
   }, [isDesktop, setShowNav]);
 
   return (
-    <div
+    <motion.div
+      initial={{ x: "-100%" }}
+      animate={!isDesktop ? { x: showNav ? 0 : "-100%" } : { x: 0 }}
+      transition={{ type: "tween", duration: 0.3 }}
       className={cn(
-        "absolute z-10 block w-[199px] border border-primary bg-white lg:relative lg:top-0 lg:w-auto lg:translate-x-0 lg:border-none",
-        showNav ? "top-1/2 block" : "hidden lg:block",
+        "absolute top-1/2 z-20 block w-[199px] border border-primary bg-white lg:relative lg:top-0 lg:w-auto lg:translate-x-0 lg:border-none",
+        showNav ? "" : "",
       )}
     >
       <img
@@ -49,7 +53,7 @@ const Navigation = ({ showNav, setShowNav }: NavigationProps) => {
                 className={
                   nav.label === "Cart"
                     ? "hidden"
-                    : "px-4 lg:px-2 lg:text-sm xl:text-base"
+                    : "px-4 hover:text-primary lg:px-2 lg:text-sm xl:text-base"
                 }
               >
                 {nav.label}
@@ -68,7 +72,7 @@ const Navigation = ({ showNav, setShowNav }: NavigationProps) => {
         <Button variant="outline">Log in</Button>
         <Button variant="primary">Sign up</Button>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

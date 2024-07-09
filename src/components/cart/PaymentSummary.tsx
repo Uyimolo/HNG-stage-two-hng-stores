@@ -7,13 +7,17 @@ import CartContext from "../../context/CartContext";
 const PaymentSummary = ({ variant }: { variant: "checkout" | "cart" }) => {
   const { cartItems } = useContext(CartContext);
 
-  const totalPrice = cartItems.reduce((sum, item) => sum + item.price, 0);
+  const totalPrice = cartItems.reduce(
+    (sum, item) => sum + item.price * item.quantity,
+    0,
+  );
 
   return (
     <div
       className={cn(
         "space-y-2 bg-primary py-4 text-white shadow-md lg:space-y-4 lg:justify-self-end lg:pt-8",
-        variant === "checkout" ? "lg:w-full" : "", cartItems.length === 0 ? 'hidden' : ''
+        variant === "checkout" ? "lg:w-full" : "",
+        cartItems.length === 0 ? "hidden" : "",
       )}
     >
       <h3 className="text-center text-xs xs:text-sm md:text-base xl:text-[text-18]">

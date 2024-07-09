@@ -26,7 +26,7 @@ const CheckoutForm = ({
   return (
     <form
       action=""
-      className="grid gap-4 px-4 pb-20 pt-28 lg:px-12 xl:px-16 max-w-2xl mx-auto"
+      className="mx-auto grid max-w-2xl gap-4 px-4 pb-20 pt-28 lg:px-12 xl:px-16"
     >
       {formInfoDetails.map((field) => (
         <input

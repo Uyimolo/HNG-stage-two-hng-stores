@@ -10,11 +10,12 @@ import Button from "../reusables/Button";
 import cartIcon from "../../assets/icons/cart.svg";
 import { Link } from "react-router-dom";
 import CartContext from "../../context/CartContext";
+import { AnimatePresence, motion } from "framer-motion";
 
 const Header = () => {
   const [showNav, setShowNav] = useState(false);
   const isDesktop = useMediaQuery({ minWidth: 1024 });
-  const {cartItems} = useContext(CartContext)
+  const { cartItems } = useContext(CartContext);
 
   return (
     <header
@@ -28,12 +29,18 @@ const Header = () => {
       {/* nav component */}
 
       <Navigation showNav={showNav} setShowNav={setShowNav} />
-      {showNav && (
-        <div
-          className="fixed bottom-0 left-0 top-0 h-screen w-full bg-neutral-700/10 lg:hidden"
-          onClick={() => setShowNav(false)}
-        ></div>
-      )}
+      <AnimatePresence>
+        {showNav && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1 }}
+            className="fixed bottom-0 left-0 top-0 z-10 h-screen w-full bg-neutral-700/10 lg:hidden"
+            onClick={() => setShowNav(false)}
+          ></motion.div>
+        )}
+      </AnimatePresence>
       {/* -----icons-------- */}
 
       <div className="order-2 flex w-fit space-x-2 justify-self-end lg:order-4">

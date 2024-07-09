@@ -1,15 +1,11 @@
-
 import Button from "../reusables/Button";
 
 type PaymentFormProps = {
-  setShowPaymentForm: (value: boolean) => void,
-}
+  setShowPaymentForm: (value: boolean) => void;
+};
 
-const PaymentForm = ({setShowPaymentForm}:PaymentFormProps) => {
+const PaymentForm = ({ setShowPaymentForm }: PaymentFormProps) => {
   const formInputClass = "bg-gray rounded-md placeholder:text-[10px] pl-4 ";
-
-
-  
 
   return (
     <div className="max-w-[17rem] space-y-2 px-4 lg:max-w-[25rem]">
