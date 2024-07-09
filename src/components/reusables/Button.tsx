@@ -10,12 +10,12 @@ const Button = ({ variant, className, children }: ButtonProps) => {
   let buttonClass = "";
 
   if (variant === "primary") {
-    buttonClass = "bg-primary text-white hover:bg-primary/85";
+    buttonClass = "bg-primary text-white hover:bg-primary/80";
   } else if (variant === "outline") {
     buttonClass =
       "bg-white border border-primary hover:bg-primary hover:text-white";
   } else if (variant === "secondary") {
-    buttonClass = "bg-orange";
+    buttonClass = "bg-orange hover:bg-orange/80";
   }
   return (
     <button

@@ -1,13 +1,13 @@
 // import watch from "../../assets/images/smartwatch.png";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import bin from "../../assets/icons/bin.svg";
 import { CartState, Product } from "../../types/types";
 import CartContext from "../../context/CartContext";
 // import thumbnail1 from "../../assets/images/thumbnail-1.png";
 const CartItem = ({ cartItem }: { cartItem: Product }) => {
-  const { removeItemFromCart } = useContext<CartState>(CartContext);
-
-  const [count, setCount] = useState<number>(1);
+  const { removeItemFromCart, updateItemQuantity } =
+    useContext<CartState>(CartContext);
+  const [count, setCount] = useState<number>(cartItem.quantity);
   const handleCount = (mode: "increase" | "decrease") => {
     if (count >= 1 && mode == "increase") {
       setCount((prevCount) => prevCount + 1);
@@ -16,8 +16,12 @@ const CartItem = ({ cartItem }: { cartItem: Product }) => {
     }
   };
 
+  useEffect(() => {
+    updateItemQuantity(cartItem.id, count);
+  }, [count, cartItem.id]);
+
   return (
-    <div className="h-auto border border-gray border-t-yellow px-2 lg:px-4 py-2">
+    <div className="h-auto border border-gray border-t-yellow px-2 py-2 lg:px-4">
       <div className="flex justify-between gap-2 pt-1 lg:py-6">
         {/* column 1 */}
         <div className="flex gap-2 lg:gap-8">

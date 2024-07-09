@@ -9,7 +9,6 @@ import NotFound from "./routes/NotFound";
 import CartProvider from "./context/CartProvider";
 
 function App() {
-
   const router = createBrowserRouter([
     {
       path: "/",
@@ -26,7 +25,7 @@ function App() {
   return (
     <CartProvider>
       <RouterProvider router={router} />
-      </CartProvider>
+    </CartProvider>
   );
 }
 

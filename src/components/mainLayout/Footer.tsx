@@ -8,6 +8,9 @@ import twitter from "../../assets/images/twitter.svg";
 import instagram from "../../assets/images/instagram.svg";
 import linkedIn from "../../assets/images/linkedIn.svg";
 
+import { motion } from "framer-motion";
+import { cn } from "../../utilities/cn";
+
 const categoriesList = [
   { category: "Electronics" },
   { category: "Shorts" },
@@ -40,7 +43,7 @@ const SocialsSection = [
 ];
 
 const footerParagraph =
-  "text-white text-[11px] xs:text-[12px] md:text-sm lg:text-base ";
+  "text-white text-[11px] xs:text-[12px] md:text-sm lg:text-base w-fit cursor-pointer";
 
 const headingClass =
   "mb-3 text-xs font-bold font-nunito text-white xs:text-base md:text-xl lg:text-2xl";
@@ -70,7 +73,7 @@ const Footer = () => {
               {categoriesList.map((category) => (
                 <p
                   key={category.category}
-                  className={footerParagraph + "hover:text-yellow"}
+                  className={cn(footerParagraph, "hover:text-yellow")}
                 >
                   {category.category}
                 </p>
@@ -87,7 +90,7 @@ const Footer = () => {
               {helpSection.map((help) => (
                 <p
                   key={help.name}
-                  className={footerParagraph + "hover:text-yellow"}
+                  className={cn(footerParagraph, "hover:text-yellow")}
                 >
                   {help.name}
                 </p>
@@ -103,10 +106,12 @@ const Footer = () => {
               {/* content */}
               <div className="flex gap-2">
                 {paymentSection.map((paymentPlatform) => (
-                  <img
+                  <motion.img
+                    initial={{ scale: 1 }}
+                    whileHover={{ scale: 1.5 }}
                     src={paymentPlatform.icon}
                     alt={paymentPlatform.platform}
-                    className="w-[14px] lg:w-5"
+                    className="w-[14px] cursor-pointer lg:w-5"
                   />
                 ))}
               </div>
@@ -117,10 +122,13 @@ const Footer = () => {
               <p className={headingClass}>Follow Us</p>
               <div className="flex gap-2">
                 {SocialsSection.map((social) => (
-                  <img
+                  <motion.img
+                    initial={{ scale: 1 }}
+                    whileHover={{ scale: 1.5 }}
+                    key={social.platform}
                     src={social.icon}
                     alt={social.platform}
-                    className="lg:w-5"
+                    className="cursor-pointer lg:w-5"
                   />
                 ))}
               </div>
@@ -132,10 +140,12 @@ const Footer = () => {
             <p className={headingClass}>Follow Us</p>
             <div className="flex gap-2">
               {SocialsSection.map((social) => (
-                <img
+                <motion.img
+                  initial={{ scale: 1 }}
+                  whileHover={{ scale: 1.5 }}
                   src={social.icon}
                   alt={social.platform}
-                  className="w-[14px]"
+                  className="w-[14px] cursor-pointer"
                 />
               ))}
             </div>

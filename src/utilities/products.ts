@@ -14,7 +14,7 @@ export const productList = [
     rating: 1.2,
     price: 2500000,
     image: iphone15,
-    quantity: 0,
+    quantity: 1,
   },
   {
     id: 2,
@@ -23,7 +23,7 @@ export const productList = [
     rating: 1.2,
     price: 2300000,
     image: iphone14,
-    quantity: 0,
+    quantity: 1,
   },
   {
     id: 3,
@@ -32,7 +32,7 @@ export const productList = [
     rating: 1.2,
     price: 2500000,
     image: pinkSmartWatch,
-    quantity: 0,
+    quantity: 1,
   },
   {
     id: 4,
@@ -41,7 +41,7 @@ export const productList = [
     rating: 1.2,
     price: 340000,
     image: airpod,
-    quantity: 0,
+    quantity: 1,
   },
   {
     id: 5,
@@ -50,7 +50,7 @@ export const productList = [
     rating: 1.2,
     price: 1800000,
     image: iphone15,
-    quantity: 0,
+    quantity: 1,
   },
   {
     id: 6,
@@ -59,7 +59,7 @@ export const productList = [
     rating: 1.2,
     price: 2500000,
     image: pinkSmartWatch,
-    quantity: 0,
+    quantity: 1,
   },
   {
     id: 7,
@@ -68,7 +68,7 @@ export const productList = [
     rating: 1.2,
     price: 1400000,
     image: iphone13,
-    quantity: 0,
+    quantity: 1,
   },
 
   {
@@ -78,7 +78,7 @@ export const productList = [
     rating: 1.2,
     price: 400000,
     image: blackSmartWatch,
-    quantity: 0,
+    quantity: 1,
   },
   {
     id: 9,
@@ -87,6 +87,6 @@ export const productList = [
     rating: 1.2,
     price: 800000,
     image: headset,
-    quantity: 0,
+    quantity: 1,
   },
 ];
