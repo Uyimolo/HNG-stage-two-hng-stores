@@ -114,9 +114,9 @@ const CheckoutDetails = ({
         )}
       </div>
 
-      {/* <div className='grid'> */}
+      <div className='sticky top-20'>
       <PaymentSummary variant="checkout" />
-      {/* </div> */}
+      </div>
     </div>
   );
 };
