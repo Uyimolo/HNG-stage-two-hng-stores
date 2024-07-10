@@ -5,7 +5,6 @@ export default {
     extend: {
       screens: {
         xs: "480px",
-        "2xl": "1440px",
       },
       colors: {
         lightGray: "#ebe3e3",
