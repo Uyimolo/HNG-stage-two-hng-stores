@@ -35,7 +35,7 @@ const CheckoutForm = ({
           id={field.label}
           placeholder={field.label}
           value={field.value}
-          className="h-12 w-full rounded-md bg-gray pl-4 placeholder:text-neutral-500"
+          className="h-12 w-full rounded-md bg-gray pl-4 text-xs placeholder:text-neutral-500 lg:text-sm"
           onChange={(e) => handleFormData(field.label, e.target.value)}
         />
       ))}
