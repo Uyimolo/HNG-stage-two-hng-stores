@@ -3,12 +3,17 @@ import PaymentSummary from "../cart/PaymentSummary";
 import PaymentForm from "./PaymentForm";
 import { cn } from "../../utilities/cn";
 import { motion } from "framer-motion";
+import visa from "../../assets/images/visa.svg";
+import masterCard from "../../assets/images/logos_mastercard.svg";
+import paypal from "../../assets/images/paypal.svg";
 
 type checkoutDetailsProps = {
   street: string;
   phoneNumber: string;
   setShowDetails: (details: boolean) => void;
 };
+
+const cards = [paypal, masterCard, visa];
 
 const CheckoutDetails = ({
   street = "",
@@ -55,7 +60,7 @@ const CheckoutDetails = ({
                 </h3>
                 {deets.title === "CUSTOMER ADDRESS" && (
                   <p
-                    className="cursor-pointer text-xs text-primary xs:text-xs md:text-sm xl:text-base lg:hover:underline"
+                    className="cursor-pointer text-xs text-primary xs:text-xs md:text-sm lg:hover:underline xl:text-base"
                     onClick={() => setShowDetails(false)}
                   >
                     Change
@@ -78,7 +83,7 @@ const CheckoutDetails = ({
                 <div className="flex items-center space-x-2">
                   <div
                     className={cn(
-                      "aspect-square w-2 cursor-pointer rounded-full border border-gray",
+                      "aspect-square w-3 cursor-pointer rounded-full border border-gray",
                       paymentMethod === "on delivery" ? "bg-primary" : "",
                     )}
                     onClick={() => setPaymentMethod("on delivery")}
@@ -86,19 +91,31 @@ const CheckoutDetails = ({
                   <p>{deets.value1}</p>
                 </div>
 
-                <div className="pb-4">
-                  <div className="flex items-center space-x-2">
-                    <div
-                      className={cn(
-                        "aspect-square w-2 cursor-pointer rounded-full border border-gray",
-                        paymentMethod === "on delivery" ? "" : "bg-primary",
-                      )}
-                      onClick={() => setPaymentMethod("pre payment")}
-                    ></div>
-                    <p className="">{deets.value2}</p>
-                  </div>
+                <div className="flex justify-between items-start">
+                  <div className="pb-4">
+                    <div className="flex items-center space-x-2">
+                      <div
+                        className={cn(
+                          "aspect-square w-3 cursor-pointer rounded-full border border-gray",
+                          paymentMethod === "on delivery" ? "" : "bg-primary",
+                        )}
+                        onClick={() => setPaymentMethod("pre payment")}
+                      ></div>
+                      <p className="">{deets.value2}</p>
+                    </div>
 
-                  <p className="pl-4">{deets.value3}</p>
+                    <p className="pl-4">{deets.value3}</p>
+                  </div>
+                  <div className="flex space-x-2">
+                    {cards.map((card, index) => (
+                      <img
+                        src={card}
+                        alt=""
+                        key={index}
+                        className="w-4 lg:w-5"
+                      />
+                    ))}
+                  </div>
                 </div>
               </div>
 
@@ -112,6 +129,7 @@ const CheckoutDetails = ({
             </div>
           ),
         )}
+        <div className=""></div>
       </div>
 
       <div className="sticky top-20">
