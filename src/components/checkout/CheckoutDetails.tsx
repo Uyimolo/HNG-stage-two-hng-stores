@@ -55,7 +55,7 @@ const CheckoutDetails = ({
                 </h3>
                 {deets.title === "CUSTOMER ADDRESS" && (
                   <p
-                    className="cursor-pointer text-[10px] text-primary xs:text-xs md:text-sm xl:text-base"
+                    className="cursor-pointer text-xs text-primary xs:text-xs md:text-sm xl:text-base lg:hover:underline"
                     onClick={() => setShowDetails(false)}
                   >
                     Change
@@ -86,7 +86,7 @@ const CheckoutDetails = ({
                   <p>{deets.value1}</p>
                 </div>
 
-                <div className="pb-2">
+                <div className="pb-4">
                   <div className="flex items-center space-x-2">
                     <div
                       className={cn(
@@ -114,8 +114,8 @@ const CheckoutDetails = ({
         )}
       </div>
 
-      <div className='sticky top-20'>
-      <PaymentSummary variant="checkout" />
+      <div className="sticky top-20">
+        <PaymentSummary variant="checkout" />
       </div>
     </div>
   );

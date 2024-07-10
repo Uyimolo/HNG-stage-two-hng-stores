@@ -5,7 +5,8 @@ type PaymentFormProps = {
 };
 
 const PaymentForm = ({ setShowPaymentForm }: PaymentFormProps) => {
-  const formInputClass = "bg-gray rounded-md placeholder:text-[10px] pl-4 lg:py-1 lg:placeholder:text-sm";
+  const formInputClass =
+    "bg-gray rounded-md py-2 text-xs placeholder:text-[10px] pl-4 lg:py-3 lg:text-sm lg:placeholder:text-sm";
 
   return (
     <div className="max-w-[17rem] space-y-2 px-4 lg:max-w-[25rem]">
@@ -30,7 +31,7 @@ const PaymentForm = ({ setShowPaymentForm }: PaymentFormProps) => {
         </form>
       </div>
       <div className="" onClick={() => setShowPaymentForm(false)}>
-        <Button variant="primary" className="min-w-full lg:min-w-full">
+        <Button variant="primary" className="min-w-full lg:min-w-full lg:h-10">
           Confirm
         </Button>
       </div>
