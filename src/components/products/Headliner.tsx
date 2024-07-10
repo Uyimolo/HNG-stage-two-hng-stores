@@ -13,21 +13,21 @@ const Headliner = () => {
 
           {/* text */}
           <div className="-translate-x- space-y-3 font-nunito text-white">
-            <h2 className="w-fit text-nowrap bg-orange px-1 text-[3vw]">
+            <h2 className="w-fit text-nowrap bg-orange px-1 text-[3vw] 2xl:text-6xl">
               <span className="italic">70%</span> DISCOUNT
             </h2>
             <div>
-              <h1 className="text-[2.6vw]">IPHONE 15 PRO MAX</h1>
-              <h3 className="text-[2.4vw] line-through decoration-yellow">
+              <h1 className="text-[2.6vw] 2xl:text-4xl">IPHONE 15 PRO MAX</h1>
+              <h3 className="text-[2.4vw] line-through decoration-yellow 2xl:text-[2.2em]">
                 <span className="line-through decoration-double">N</span>{" "}
                 3,500,000
               </h3>
-              <h3 className="text-[2.4vw]">
+              <h3 className="text-[2.4vw] 2xl:text-[2.2em]">
                 <span className="line-through decoration-double">N</span>{" "}
                 2,500,00
               </h3>
             </div>
-            <h2 className="w-fit text-nowrap bg-orange px-1 text-center text-[2.2vw]">
+            <h2 className="w-fit text-nowrap bg-orange px-1 text-center text-[2.2vw] 2xl:text-[2em]">
               T&C Applies
             </h2>
           </div>
