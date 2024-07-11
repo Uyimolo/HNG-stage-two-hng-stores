@@ -11,10 +11,10 @@ const Cart = () => {
   const { cartItems } = useContext<CartState>(CartContext);
 
   return (
-    <div className="px-4 py-28 lg:px-12 xl:px-16 max-w-[1800px] mx-auto overflow-hidden">
+    <div className="px-4 py-28 lg:px-12 xl:px-16 max-w-[1800px] mx-auto md:overflow-hidden lg:overflow-visible">
       <div className="grid items-start space-y-4 lg:grid-cols-[1fr,30%] lg:gap-3 lg:space-y-0 xl:grid-cols-[1fr,25%]">
         {/* header */}
-        <div className="space-y-4 lg:sticky lg:top-20 lg:order-2">
+        <div className="space-y-4 lg:sticky lg:top-28 lg:order-2">
           <Header />
           <div className="hidden lg:block">
             <PaymentSummary variant="cart" />

@@ -132,7 +132,7 @@ const CheckoutDetails = ({
         <div className=""></div>
       </div>
 
-      <div className="sticky top-20">
+      <div className="sticky top-28">
         <PaymentSummary variant="checkout" />
       </div>
     </div>
