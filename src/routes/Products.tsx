@@ -6,13 +6,13 @@ const pagination = [1, 2, 3, 4, "...", 15];
 const Products = () => {
   const handlePaginaton = () => {
     // scroll back to top
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    // window.scrollTo({ top: 0, behavior: "smooth" });
   };
   return (
-    <section className="px-4 pb-10 pt-20 lg:px-12 xl:px-16">
+    <section className="px-4 pb-10 pt-28 lg:px-12 xl:px-16">
       <Headliner />
 
-      <div className="pt-4 lg:pt-6">
+      <div className="mx-auto max-w-[1800px] pt-4 lg:pt-6">
         <ProductList />
       </div>
       {/* pagination */}

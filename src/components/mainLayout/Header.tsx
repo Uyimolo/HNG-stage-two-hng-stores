@@ -20,7 +20,7 @@ const Header = () => {
   return (
     <header
       className={cn(
-        "fixed left-0 top-0 z-20 grid w-full gap-6 bg-white px-4 py-4 lg:flex lg:items-center lg:justify-between lg:gap-10 lg:px-12  xl:px-16 2xl:left-1/2 2xl:max-w-[1800px] 2xl:-translate-x-1/2",
+        "fixed left-0 top-0 z-20 grid w-full gap-6 bg-white px-4 py-4 lg:flex lg:items-center lg:justify-between lg:gap-10 lg:py-10 lg:px-12  xl:px-16 ",
       )}
     >
       <div>

@@ -52,122 +52,124 @@ const headingClass =
 const Footer = () => {
   return (
     <footer className="bg-primary">
-      {/* footer info */}
-      <div className="grid grid-cols-[35%,1fr] px-4 py-12 lg:px-12 xl:px-16">
-        {/* logo and address*/}
-        <div className="space-y-2">
-          <Logo variant="footer" />
-          <p className="text-[12px] text-white xs:text-[12px] md:text-base lg:text-2xl">
-            4 Banana Street,
-            <br /> Yaba Lagos State, Nigeria.
-          </p>
-        </div>
-
-        {/* other information */}
-        <div className="grid grid-cols-2 gap-x-2 gap-y-4 lg:grid-cols-3">
-          {/* categories */}
-          <div className="">
-            {/* heading */}
-            <h5 className={headingClass}>Categories</h5>
-            {/* content */}
-            <div className="flex flex-col gap-1">
-              {categoriesList.map((category) => (
-                <Link
-                  to="/"
-                  key={category.category}
-                  className={cn(footerParagraph, "hover:text-yellow")}
-                >
-                  {category.category}
-                </Link>
-              ))}
-            </div>
+      <div className="max-w-[1800px] mx-auto">
+        {/* footer info */}
+        <div className="grid grid-cols-[35%,1fr] px-4 py-12 lg:px-12 xl:px-16">
+          {/* logo and address*/}
+          <div className="space-y-2">
+            <Logo variant="footer" />
+            <p className="text-[12px] text-white xs:text-[12px] md:text-base lg:text-2xl">
+              4 Banana Street,
+              <br /> Yaba Lagos State, Nigeria.
+            </p>
           </div>
 
-          {/* need help */}
-          <div>
-            {/* heading */}
-            <h5 className={headingClass}>Need help?</h5>
-            {/* content */}
-            <div className="flex flex-col space-y-1">
-              {helpSection.map((help) => (
-                <Link
-                  to="/"
-                  key={help.name}
-                  className={cn(footerParagraph, "hover:text-yellow")}
-                >
-                  {help.name}
-                </Link>
-              ))}
-            </div>
-          </div>
-
-          <div className="space-y-6">
-            {/* payment */}
+          {/* other information */}
+          <div className="grid grid-cols-2 gap-x-2 gap-y-4 lg:grid-cols-3">
+            {/* categories */}
             <div className="">
               {/* heading */}
-              <h5 className={headingClass}>Payment</h5>
+              <h5 className={headingClass}>Categories</h5>
               {/* content */}
-              <div className="flex gap-2">
-                {paymentSection.map((paymentPlatform) => (
-                  <motion.img
-                    key={paymentPlatform.platform}
-                    initial={{ scale: 1 }}
-                    whileHover={{ scale: 1.5 }}
-                    src={paymentPlatform.icon}
-                    alt={paymentPlatform.platform}
-                    className="w-[14px] cursor-pointer lg:w-5"
-                  />
+              <div className="flex flex-col gap-1">
+                {categoriesList.map((category) => (
+                  <Link
+                    to="*"
+                    key={category.category}
+                    className={cn(footerParagraph, "hover:text-yellow")}
+                  >
+                    {category.category}
+                  </Link>
                 ))}
               </div>
             </div>
 
-            {/* socials (shows only on large screens)*/}
-            <div className="hidden lg:block">
+            {/* need help */}
+            <div>
+              {/* heading */}
+              <h5 className={headingClass}>Need help?</h5>
+              {/* content */}
+              <div className="flex flex-col space-y-1">
+                {helpSection.map((help) => (
+                  <Link
+                    to="*"
+                    key={help.name}
+                    className={cn(footerParagraph, "hover:text-yellow")}
+                  >
+                    {help.name}
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            <div className="space-y-6">
+              {/* payment */}
+              <div className="">
+                {/* heading */}
+                <h5 className={headingClass}>Payment</h5>
+                {/* content */}
+                <div className="flex gap-2">
+                  {paymentSection.map((paymentPlatform) => (
+                    <motion.img
+                      key={paymentPlatform.platform}
+                      initial={{ scale: 1 }}
+                      whileHover={{ scale: 1.5 }}
+                      src={paymentPlatform.icon}
+                      alt={paymentPlatform.platform}
+                      className="w-[14px] cursor-pointer lg:w-5"
+                    />
+                  ))}
+                </div>
+              </div>
+
+              {/* socials (shows only on large screens)*/}
+              <div className="hidden lg:block">
+                <p className={headingClass}>Follow Us</p>
+                <div className="flex gap-2">
+                  {SocialsSection.map((social) => (
+                    <motion.img
+                      initial={{ scale: 1 }}
+                      whileHover={{ scale: 1.5 }}
+                      key={social.platform}
+                      src={social.icon}
+                      alt={social.platform}
+                      className="cursor-pointer lg:w-5"
+                    />
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* socials */}
+            <div className="lg:hidden">
               <p className={headingClass}>Follow Us</p>
               <div className="flex gap-2">
                 {SocialsSection.map((social) => (
                   <motion.img
+                    key={social.platform}
                     initial={{ scale: 1 }}
                     whileHover={{ scale: 1.5 }}
-                    key={social.platform}
                     src={social.icon}
                     alt={social.platform}
-                    className="cursor-pointer lg:w-5"
+                    className="w-[14px] cursor-pointer"
                   />
                 ))}
               </div>
             </div>
           </div>
-
-          {/* socials */}
-          <div className="lg:hidden">
-            <p className={headingClass}>Follow Us</p>
-            <div className="flex gap-2">
-              {SocialsSection.map((social) => (
-                <motion.img
-                  key={social.platform}
-                  initial={{ scale: 1 }}
-                  whileHover={{ scale: 1.5 }}
-                  src={social.icon}
-                  alt={social.platform}
-                  className="w-[14px] cursor-pointer"
-                />
-              ))}
-            </div>
-          </div>
         </div>
-      </div>
 
-      {/* closing remarks lol */}
-      <div className="flex justify-between border-t-2 border-yellow px-4 py-4 lg:px-12 xl:px-16">
-        <p className={footerParagraph + "font-bold"}>
-          2024 HNG Stores{" "}
-          <span className="font-normal">All rights reserved</span>
-        </p>
+        {/* closing remarks lol */}
+        <div className="flex justify-between border-t-2 border-yellow px-4 py-4 lg:px-12 xl:px-16">
+          <p className={footerParagraph + "font-bold"}>
+            2024 HNG Stores{" "}
+            <span className="font-normal">All rights reserved</span>
+          </p>
 
-        <div className="flex space-x-4 lg:space-x-8">
-          <p className={footerParagraph}>Privacy Policy</p>
-          <p className={footerParagraph}>Terms & Conditions</p>
+          <div className="flex space-x-4 lg:space-x-8">
+            <p className={footerParagraph}>Privacy Policy</p>
+            <p className={footerParagraph}>Terms & Conditions</p>
+          </div>
         </div>
       </div>
     </footer>

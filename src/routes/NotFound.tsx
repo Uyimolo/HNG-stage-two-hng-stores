@@ -6,9 +6,9 @@ import Header from "../components/mainLayout/Header";
 import Footer from "../components/mainLayout/Footer";
 const NotFound = () => {
   return (
-    <div className="relative 2xl:max-w-[1800px] mx-auto">
+    <div className="relative">
       <Header />
-      <div className="grid min-h-[700px] place-content-center gap-4 px-4 py-20 lg:px-12 xl:px-16">
+      <div className="mx-auto grid min-h-[700px] place-content-center gap-4 px-4 py-20 lg:px-12 xl:px-16 2xl:max-w-[1800px]">
         <img
           src={notFound}
           alt="Rider on bike"

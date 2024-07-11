@@ -4,9 +4,11 @@ import Footer from "../components/mainLayout/Footer";
 
 const MainLayout = () => {
   return (
-    <div className="pt-6 max-w-[1800px] mx-auto">
+    <div className="pt-6  mx-auto">
       <Header />
-      <Outlet />
+      <div className="">
+        <Outlet />
+        </div>
       <Footer />
       <ScrollRestoration />
     </div>

@@ -21,7 +21,7 @@ const Checkout = () => {
   const [formInfoDetails, setFormInfoDetails] = useState<FormField>(formInfo);
 
   return (
-    <div className="">
+    <div className="mx-auto max-w-[1800px]">
       {showDetails ? (
         <CheckoutDetails
           street={formInfoDetails[2].value}
