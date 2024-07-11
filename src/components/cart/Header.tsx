@@ -19,7 +19,7 @@ const Header = () => {
         {/* left items */}
         <div className="relative">
           {/* text */}
-          <h1 className="absolute top-1/2 w-fit -translate-y-1/2 rotate-[-15deg] pl-4 text-center text-[19px] text-white lg:-left-0 lg:top-10 lg:translate-x-0 lg:translate-y-0 lg:rotate-[-29deg] lg:text-[27px] xl:text-[37px]">
+          <h1 className="absolute top-1/2 w-fit -translate-y-1/2 rotate-[-15deg] pl-4 text-center text-[19px] xs:text-[35px] text-white md:text-[45px] lg:-left-0 lg:top-10 lg:translate-x-0 lg:translate-y-0 lg:rotate-[-29deg] lg:text-[27px] xl:text-[37px]">
             Start Shopping <br /> now?
           </h1>
         </div>

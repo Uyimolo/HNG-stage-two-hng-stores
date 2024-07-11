@@ -23,7 +23,7 @@ const CartItem = ({ cartItem }: { cartItem: Product }) => {
       <div className="flex justify-between gap-2 pt-1 lg:py-6">
         {/* column 1 */}
         <div className="flex gap-2 lg:gap-8">
-          <div className="w-fit space-y-4 lg:space-y-6">
+          <div className="w-fit space-y-8 lg:space-y-10">
             <img
               src={cartItem.image}
               alt=""
@@ -57,7 +57,7 @@ const CartItem = ({ cartItem }: { cartItem: Product }) => {
         <div className="flex w-fit flex-col justify-between justify-self-end">
           <p className="text-xs font-extrabold xs:text-xs md:text-sm xl:text-base">
             <span className="line-through decoration-double">N</span>
-            {cartItem.price}
+            {cartItem.price.toLocaleString()}
           </p>
 
           {/* quantity */}

@@ -36,7 +36,7 @@ const ProductCard = ({ product }: { product: Product }) => {
           </div>
           <h4 className="text-[12px] font-bold xs:text-xs md:text-sm xl:text-base">
             <span className="line-through decoration-double">N</span>
-            {product.price}
+            {product.price.toLocaleString()}
           </h4>
         </div>
         <div

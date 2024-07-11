@@ -29,7 +29,7 @@ const PaymentSummary = ({ variant }: { variant: "checkout" | "cart" }) => {
           <p>{`Items(${cartItems.length})`}</p>
           <p>
             <span className="line-through decoration-double">N</span>
-            {totalPrice}
+            {totalPrice.toLocaleString()}
           </p>
         </div>
 
@@ -46,7 +46,7 @@ const PaymentSummary = ({ variant }: { variant: "checkout" | "cart" }) => {
         <p>Total</p>
         <p>
           <span className="line-through decoration-double">N</span>
-          {totalPrice + 600}
+          {(totalPrice + 600).toLocaleString()}
         </p>
       </div>
 
