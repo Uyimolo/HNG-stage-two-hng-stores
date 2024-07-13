@@ -48,7 +48,7 @@ const Navigation = ({ showNav, setShowNav }: NavigationProps) => {
         className="absolute right-4 top-4 w-full max-w-[16px] lg:hidden"
         onClick={() => setShowNav(false)}
       />
-      <nav className="flex flex-col items-center space-y-2 pb-6 pt-16 lg:flex-row lg:space-y-0 lg:p-0">
+      <nav className="space-y-4 px-6 pb-6 pt-16 lg:flex lg:flex-row lg:space-y-0 lg:p-0">
         {navigationItems.map((nav) => (
           <NavLink
             key={nav.label}
@@ -69,11 +69,12 @@ const Navigation = ({ showNav, setShowNav }: NavigationProps) => {
             ) : (
               <Button
                 variant="outline"
-                className={
+                className={cn(
+                  "mt-2 w-full",
                   isPathActive(nav.path, nav.label)
                     ? "bg-primary text-white"
-                    : ""
-                }
+                    : "",
+                )}
               >
                 {nav.label}{" "}
                 {`${nav.label === "Cart" ? `(${cartItems.length.toString()})` : ""}`}
@@ -83,9 +84,13 @@ const Navigation = ({ showNav, setShowNav }: NavigationProps) => {
         ))}
       </nav>
 
-      <div className="flex flex-col items-center space-y-2 border-t-2 border-yellow py-6 lg:hidden">
-        <Button variant="outline">Log in</Button>
-        <Button variant="primary">Sign up</Button>
+      <div className="relative flex flex-col items-center space-y-2 border-t-2 border-yellow px-6 py-6 lg:hidden">
+        <Button variant="outline" className="w-full">
+          Log in
+        </Button>
+        <Button variant="primary" className="w-full">
+          Sign up
+        </Button>
       </div>
     </motion.div>
   );

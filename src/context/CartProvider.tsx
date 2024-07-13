@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import CartContext from "./CartContext";
-import { CartState, Product } from "../types/types";
+import { CartItemValues, CartState} from "../types/types";
 
 const CartProvider: React.FC<React.PropsWithChildren> = ({ children }) => {
-  const [cartItems, setCartItems] = useState<Product[]>([]);
+  const [cartItems, setCartItems] = useState<CartItemValues[]>([]);
 
-  const addItemToCart = (newItem: Product) => {
+
+
+  const addItemToCart = (newItem: CartItemValues) => {
     const existingItem = cartItems.find((item) => item.id === newItem.id);
     if (existingItem) {
       return;
@@ -14,11 +16,11 @@ const CartProvider: React.FC<React.PropsWithChildren> = ({ children }) => {
     }
   };
 
-  const removeItemFromCart = (itemId: number) => {
+  const removeItemFromCart = (itemId: string) => {
     setCartItems((prevItems) => prevItems.filter((item) => item.id !== itemId));
   };
 
-  const updateItemQuantity = (itemId: number, newQuantity: number) => {
+  const updateItemQuantity = (itemId: string, newQuantity: number) => {
     const updatedCartItems = cartItems.map((item) =>
       item.id === itemId ? { ...item, quantity: newQuantity } : item,
     );

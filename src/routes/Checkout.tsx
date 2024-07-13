@@ -1,6 +1,7 @@
 import { useState } from "react";
 import CheckoutDetails from "../components/checkout/CheckoutDetails";
 import CheckoutForm from "../components/checkout/CheckoutForm";
+import Container from "../layout/Container";
 
 const formInfo = [
   { label: "First Name", value: "" },
@@ -21,21 +22,23 @@ const Checkout = () => {
   const [formInfoDetails, setFormInfoDetails] = useState<FormField>(formInfo);
 
   return (
-    <div className="mx-auto max-w-[1800px]">
-      {showDetails ? (
-        <CheckoutDetails
-          street={formInfoDetails[2].value}
-          phoneNumber={formInfoDetails[5].value}
-          setShowDetails={setShowDetails}
-        />
-      ) : (
-        <CheckoutForm
-          formInfoDetails={formInfoDetails}
-          setShowDetails={setShowDetails}
-          setFormInfoDetails={setFormInfoDetails}
-        />
-      )}
-    </div>
+    <main className="">
+      <Container>
+        {showDetails ? (
+          <CheckoutDetails
+            street={formInfoDetails[2].value}
+            phoneNumber={formInfoDetails[5].value}
+            setShowDetails={setShowDetails}
+          />
+        ) : (
+          <CheckoutForm
+            formInfoDetails={formInfoDetails}
+            setShowDetails={setShowDetails}
+            setFormInfoDetails={setFormInfoDetails}
+          />
+        )}
+      </Container>
+    </main>
   );
 };
 

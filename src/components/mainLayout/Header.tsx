@@ -18,63 +18,66 @@ const Header = () => {
   const { cartItems } = useContext(CartContext);
 
   return (
-    <header
-      className={cn(
-        "fixed left-0 top-0 z-20 grid w-full gap-6 bg-white px-4 py-4 lg:flex lg:items-center lg:justify-between lg:gap-10 lg:py-10 lg:px-12  xl:px-16 ",
-      )}
-    >
-      <div>
-        <Logo variant="header" />
-      </div>
-      {/* nav component */}
-
-      <Navigation showNav={showNav} setShowNav={setShowNav} />
-      <AnimatePresence>
-        {showNav && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 1 }}
-            className="fixed bottom-0 left-0 top-0 z-10 h-screen w-full bg-neutral-700/10 lg:hidden"
-            onClick={() => setShowNav(false)}
-          ></motion.div>
+    <header>
+      {/* inner container  */}
+      <div
+        className={cn(
+          "fixed left-0 top-0 z-20 grid w-full gap-5 bg-white px-4 py-4 lg:flex lg:items-center lg:justify-between lg:gap-10 lg:px-12 lg:py-14 xl:px-16",
         )}
-      </AnimatePresence>
-      {/* -----icons-------- */}
+      >
+        <div>
+          <Logo variant="header" />
+        </div>
+        {/* nav component */}
 
-      <div className="order-2 flex w-fit space-x-2 justify-self-end lg:order-4">
-        <Link to="/cart" className="relative hidden lg:block">
+        <Navigation showNav={showNav} setShowNav={setShowNav} />
+        <AnimatePresence>
+          {showNav && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 1 }}
+              className="fixed bottom-0 left-0 top-0 z-10 h-screen w-full bg-neutral-700/10 lg:hidden"
+              onClick={() => setShowNav(false)}
+            ></motion.div>
+          )}
+        </AnimatePresence>
+        {/* -----icons-------- */}
+
+        <div className="order-2 flex w-fit space-x-2 justify-self-end lg:order-4">
+          <Link to="/cart" className="relative hidden lg:block">
+            <img
+              src={cartIcon}
+              alt=""
+              className="hidden w-[22px] min-w-[22px] lg:block"
+            />
+            <p className="absolute -right-1 -top-2 grid aspect-square w-4 place-content-center rounded-full bg-primary text-[12px] text-white">
+              {cartItems.length}
+            </p>
+          </Link>
           <img
-            src={cartIcon}
-            alt=""
-            className="hidden w-[22px] min-w-[22px] lg:block"
+            src={hamburgerIcon}
+            className="w-[28px] lg:hidden"
+            alt="navigation menu toggle button"
+            onClick={() => setShowNav(true)}
           />
-          <p className="absolute -right-1 -top-2 grid aspect-square w-4 place-content-center rounded-full bg-primary text-[12px] text-white">
-            {cartItems.length}
-          </p>
-        </Link>
-        <img
-          src={hamburgerIcon}
-          className="w-[22px] lg:hidden"
-          alt="navigation menu toggle button"
-          onClick={() => setShowNav(true)}
+
+          <img
+            src={notificationIcon}
+            alt="notification icon"
+            className="min-w-[22px]"
+          />
+        </div>
+        {/* search component */}
+        <Search
+          className={cn("", isDesktop ? "order-3" : "order-4 col-span-2")}
         />
 
-        <img
-          src={notificationIcon}
-          alt="notification icon"
-          className="min-w-[22px]"
-        />
-      </div>
-      {/* search component */}
-      <Search
-        className={cn("", isDesktop ? "order-3" : "order-4 col-span-2")}
-      />
-
-      <div className="order-5 hidden items-center space-x-2 lg:flex">
-        <Button variant="outline">Log in</Button>
-        <Button variant="primary">Sign up</Button>
+        <div className="order-5 hidden items-center space-x-2 lg:flex">
+          <Button variant="outline">Log in</Button>
+          <Button variant="primary">Sign up</Button>
+        </div>
       </div>
     </header>
   );

@@ -20,6 +20,7 @@ const CheckoutDetails = ({
   phoneNumber = "",
   setShowDetails,
 }: checkoutDetailsProps) => {
+  const [checkoutEnabled, setCheckoutEnabled] = useState<boolean>(false);
   const [paymentMethod, setPaymentMethod] = useState<
     "on delivery" | "pre payment"
   >("on delivery");
@@ -30,6 +31,13 @@ const CheckoutDetails = ({
       ? setShowPaymentForm(true)
       : setShowPaymentForm(false);
   }, [paymentMethod]);
+
+  useEffect(() => {
+    paymentMethod === "pre payment"
+      ? setCheckoutEnabled(false)
+      : setCheckoutEnabled(true);
+  }, [paymentMethod]);
+
   const checkoutDetails = [
     {
       title: "CUSTOMER ADDRESS",
@@ -49,7 +57,7 @@ const CheckoutDetails = ({
     },
   ];
   return (
-    <div className="grid items-start gap-4 px-4 pb-20 pt-28 lg:grid-cols-[65%,1fr] lg:px-12 xl:grid-cols-[75%,1fr] xl:px-16">
+    <div className="grid items-start gap-4 md:grid-cols-[65%,1fr] xl:grid-cols-[75%,1fr]">
       <div className="space-y-2">
         {checkoutDetails.map((deets) =>
           !deets.value3 ? (
@@ -91,7 +99,7 @@ const CheckoutDetails = ({
                   <p>{deets.value1}</p>
                 </div>
 
-                <div className="flex justify-between items-start">
+                <div className="flex items-start justify-between">
                   <div className="pb-4">
                     <div className="flex items-center space-x-2">
                       <div
@@ -124,7 +132,10 @@ const CheckoutDetails = ({
                 animate={showPaymentForm ? { height: "auto", opacity: 1 } : ""}
                 className="mb-12 overflow-hidden"
               >
-                <PaymentForm setShowPaymentForm={setShowPaymentForm} />
+                <PaymentForm
+                  setShowPaymentForm={setShowPaymentForm}
+                  setCheckoutEnabled={setCheckoutEnabled}
+                />
               </motion.div>
             </div>
           ),
@@ -132,8 +143,8 @@ const CheckoutDetails = ({
         <div className=""></div>
       </div>
 
-      <div className="sticky top-28">
-        <PaymentSummary variant="checkout" />
+      <div className="sticky top-36">
+        <PaymentSummary variant="checkout" disabled={!checkoutEnabled} />
       </div>
     </div>
   );

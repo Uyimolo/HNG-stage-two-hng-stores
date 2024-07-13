@@ -1,8 +1,8 @@
 import { useContext, useEffect, useState } from "react";
 import bin from "../../assets/icons/bin.svg";
-import { CartState, Product } from "../../types/types";
+import { CartItemValues, CartState } from "../../types/types";
 import CartContext from "../../context/CartContext";
-const CartItem = ({ cartItem }: { cartItem: Product }) => {
+const CartItem = ({ cartItem }: { cartItem: CartItemValues }) => {
   const { removeItemFromCart, updateItemQuantity } =
     useContext<CartState>(CartContext);
   const [count, setCount] = useState<number>(cartItem.quantity);
@@ -25,9 +25,9 @@ const CartItem = ({ cartItem }: { cartItem: Product }) => {
         <div className="flex gap-2 lg:gap-8">
           <div className="w-fit space-y-8 lg:space-y-10">
             <img
-              src={cartItem.image}
+              src={" https://api.timbu.cloud/images/" + cartItem.image}
               alt=""
-              className="w-16 rounded-md border border-gray md:w-24 xl:w-32"
+              className="aspect-square w-16 rounded-md border border-gray md:w-24 xl:w-32"
             />
             <div
               className="flex h-fit cursor-pointer space-x-1"
@@ -44,7 +44,7 @@ const CartItem = ({ cartItem }: { cartItem: Product }) => {
           <div className="justify-self-start">
             <div className="">
               <h3 className="text-[12px] font-bold xs:text-xs md:text-sm xl:text-[18px]">
-                {cartItem.title}
+                {cartItem.name}
               </h3>
               <p className="text-[10px] font-bold xs:text-[8px] md:text-xs xl:text-base">
                 In Stock
@@ -57,7 +57,7 @@ const CartItem = ({ cartItem }: { cartItem: Product }) => {
         <div className="flex w-fit flex-col justify-between justify-self-end">
           <p className="text-xs font-extrabold xs:text-xs md:text-sm xl:text-base">
             <span className="line-through decoration-double">N</span>
-            {cartItem.price.toLocaleString()}
+            {cartItem.price?.toLocaleString()}
           </p>
 
           {/* quantity */}
