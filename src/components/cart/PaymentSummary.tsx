@@ -6,14 +6,14 @@ import CartContext from "../../context/CartContext";
 
 interface PaymentSummaryProps {
   variant: "checkout" | "cart";
-  disabled: boolean;
+  disabled?: boolean;
 }
 
 const PaymentSummary = ({ variant, disabled = true }: PaymentSummaryProps) => {
   const { cartItems } = useContext(CartContext);
 
   const totalPrice = cartItems.reduce(
-    (sum, item) => sum + item.price * item.quantity,
+    (sum, item) => sum + (item.price ?? 0) * item.quantity,
     0,
   );
 

@@ -216,3 +216,108 @@ export const laptops = [
     Price: "₦529,999 (Starting)",
   },
 ];
+
+// cosnt useless =
+
+// {
+//     "name": "Samsung Galaxy Book 2 Pro",
+//     "description": "The Samsung Galaxy Book 2 Pro offers a sleek design, a vibrant AMOLED display, and long battery life. It integrates seamlessly with Samsung Galaxy smartphones, making it ideal for Samsung users who want a connected and productive experience.",
+//     "unique_id": "HN197500P",
+//     "url_slug": "samsung-galaxy-book-2-pro",
+//     "is_available": true,
+//     "is_service": false,
+//     "previous_url_slugs": null,
+//     "unavailable": false,
+//     "unavailable_start": null,
+//     "unavailable_end": null,
+//     "id": "73984ac951064883825e7b3f1e199eba",
+//     "parent_product_id": null,
+//     "parent": null,
+//     "organization_id": "10f52461c0fc47c9be418323f2d56d5d",
+//     "product_image": [],
+//     "categories": [
+//         {
+//             "organization_id": "10f52461c0fc47c9be418323f2d56d5d",
+//             "name": "laptops",
+//             "position": null,
+//             "category_type": "standard",
+//             "description": "",
+//             "last_updated": "2024-07-13T08:06:35",
+//             "id": "1d2056b3023e402e99927a546c724be7",
+//             "parent_id": null,
+//             "url_slug": null,
+//             "is_deleted": false,
+//             "date_created": "2024-07-13T08:06:35",
+//             "subcategories": [],
+//             "parents": []
+//         }
+//     ],
+//     "date_created": "2024-07-13T11:23:07",
+//     "last_updated": "2024-07-13T11:23:38",
+//     "user_id": "5aa50a45c31447fc86663d2375ca824e",
+//     "photos": [
+//         {
+//             "model_name": "products",
+//             "model_id": "73984ac951064883825e7b3f1e199eba",
+//             "organization_id": "10f52461c0fc47c9be418323f2d56d5d",
+//             "filename": "36abf1add98f47f9bc85018ebea2c21f.jpg",
+//             "url": "hng-stores/product_samsung_galaxy_book_2_pro_1a5f33_1.jpg",
+//             "is_featured": false,
+//             "save_as_jpg": true,
+//             "is_public": true,
+//             "file_rename": false,
+//             "position": 1
+//         },
+//         {
+//             "model_name": "products",
+//             "model_id": "73984ac951064883825e7b3f1e199eba",
+//             "organization_id": "10f52461c0fc47c9be418323f2d56d5d",
+//             "filename": "e0e3c7c3325e46ae92f498decd69ff44.jpg",
+//             "url": "hng-stores/product_samsung_galaxy_book_2_pro_6832c5_4.jpg",
+//             "is_featured": false,
+//             "save_as_jpg": true,
+//             "is_public": true,
+//             "file_rename": false,
+//             "position": 4
+//         },
+//         {
+//             "model_name": "products",
+//             "model_id": "73984ac951064883825e7b3f1e199eba",
+//             "organization_id": "10f52461c0fc47c9be418323f2d56d5d",
+//             "filename": "e19c3a94be664106b42431f783df0d8a.jpg",
+//             "url": "hng-stores/product_samsung_galaxy_book_2_pro_ecaf6c_3.jpg",
+//             "is_featured": false,
+//             "save_as_jpg": true,
+//             "is_public": true,
+//             "file_rename": false,
+//             "position": 3
+//         },
+//         {
+//             "model_name": "products",
+//             "model_id": "73984ac951064883825e7b3f1e199eba",
+//             "organization_id": "10f52461c0fc47c9be418323f2d56d5d",
+//             "filename": "27dc7cf884c84e7fb6b1620281b55f59.jpg",
+//             "url": "hng-stores/product_samsung_galaxy_book_2_pro_b08571_2.jpg",
+//             "is_featured": false,
+//             "save_as_jpg": true,
+//             "is_public": true,
+//             "file_rename": false,
+//             "position": 2
+//         }
+//     ],
+//     "current_price": [
+//         {
+//             "NGN": [
+//                 529999,
+//                 null,
+//                 []
+//             ]
+//         }
+//     ],
+//     "is_deleted": false,
+//     "available_quantity": 30,
+//     "selling_price": null,
+//     "discounted_price": null,
+//     "buying_price": null,
+//     "extra_infos": null
+// }

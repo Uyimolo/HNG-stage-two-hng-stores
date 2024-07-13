@@ -39,9 +39,9 @@ export interface Product {
   unavailable_end: string | null;
   id: string;
   parent_product_id: string | null;
-  parent: unknown; // Can be different types depending on structure
+  parent: unknown; 
   organization_id: string;
-  product_image: string[]; // Likely an array of image URLs or objects
+  product_image: string[]; 
   categories: Category[];
   date_created: string;
   last_updated: string;
@@ -49,6 +49,7 @@ export interface Product {
   photos: Photo[];
   current_price: {
     [currency: string]: {
+      [x: string]: unknown;
       price: number | null;
       discount?: unknown[];
       retail_price?: number | null;

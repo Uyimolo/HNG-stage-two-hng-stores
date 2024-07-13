@@ -1,23 +1,8 @@
-// import { Product } from "../../types/types";
-// import { useContext } from "react";
 import stars from "../../assets/images/stars.png";
 import { Product } from "../../types/types";
 import Button from "../reusables/Button";
-// import CartContext from "../../context/CartContext";
 
-// type DetailsProps = {
-//   product: Product | undefined;
-// };
-
-// type Product = {
-//   product: {
-//     title: string;
-//     stock: number;
-//     description: string;
-//   };
-// };
-const Details = ({ product }: {product:Product}) => {
-  //   const { addItemToCart } = useContext(CartContext);
+const Details = ({ product }: { product: Product }) => {
 
   if (product)
     return (
@@ -28,10 +13,9 @@ const Details = ({ product }: {product:Product}) => {
           </h3>
           <div className="flex space-x-1">
             <img src={stars} alt="" />
-            <p className="text-[6px] xs:text-[8px] lg:text-xs xl:text-sm">
-              
-            </p>
+            <p className="text-[6px] xs:text-[8px] lg:text-xs xl:text-sm"></p>
           </div>
+          {/* <p>{product?.current_price?.NGN[0]}</p> */}
           <p className="max-w-md pt-2 text-[10px] xs:text-xs lg:text-sm xl:text-base">
             {product?.description}
           </p>

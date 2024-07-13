@@ -1,4 +1,3 @@
-// import { productList } from "../../utilities/products";
 import { useState } from "react";
 import ProductCard from "./ProductCard";
 import { Product } from "../../types/types";
@@ -12,7 +11,11 @@ const ProductList = () => {
   const [loading, setLoading] = useState<boolean>(true);
   const [numberOfPages, setNumberOfPages] = useState<number>(1);
 
-  const url = `/api/products?organization_id=10f52461c0fc47c9be418323f2d56d5d&reverse_sort=false&page=${page}&size=10&Appid=NEFU0GPE7LT7HEA&Apikey=6557b99978244dbaaabdb1bfea62153520240712212554076418`;
+  const apiKey = import.meta.env.VITE_API_KEY;
+  const appId = import.meta.env.VITE_APP_ID;
+  const orgId = import.meta.env.VITE_ORG_ID;
+
+  const url = `/api/products?organization_id=${orgId}&reverse_sort=false&page=${page}&size=10&Appid=${appId}&Apikey=${apiKey}`;
 
   const fetchData = async () => {
     try {
@@ -21,7 +24,7 @@ const ProductList = () => {
 
       if (response.ok) {
         const data = await response.json();
-
+        console.log(data);
         setNumberOfPages(data.total / 10);
 
         setLoading(false);

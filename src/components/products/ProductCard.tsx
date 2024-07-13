@@ -14,7 +14,7 @@ const ProductCard = ({ product }: { product: Product }) => {
   const toBeAddedToCart = {
     name: product.name,
     id: product.id,
-    price: product.current_price[0].NGN[0],
+    price: 1,
     image: product.photos[0].url,
     quantity: 1,
   };
@@ -59,7 +59,7 @@ const ProductCard = ({ product }: { product: Product }) => {
           </div>
           <h4 className="text-[12px] font-bold xs:text-xs md:text-sm xl:text-base">
             <span className="line-through decoration-double">N</span>
-            {product.current_price[0].NGN[0].toLocaleString()}
+            {product.buying_price}
           </h4>
         </div>
         <div

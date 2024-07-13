@@ -1,38 +1,30 @@
-// import { useParams } from 'react-router-dom';
 import LightBox from "../components/product-details/LightBox";
-// import useReactQuery from '../utilities/useReactQuery';
-// import { useEffect, useState } from 'react';
+
 import Details from "../components/product-details/Details";
-// import image from "../assets/images/appleairpod.png";
-// import image2 from "../assets/images/applewatchpink.png";
-// import image3 from "../assets/images/headphone.png";
+
 import Container from "../layout/Container";
-import { useEffect, useState } from "react";
-import { Product } from "../types/types";
+
 import { useParams } from "react-router-dom";
 import useReactQuery from "../utilities/useReactQuery";
 
 const ProductDetails = () => {
   const { productId } = useParams();
 
-  // const [product, setProduct] = useState<Product>()
+  const apiKey = import.meta.env.VITE_API_KEY;
+  const appId = import.meta.env.VITE_APP_ID;
+  const orgId = import.meta.env.VITE_ORG_ID;
+
   const fetchData = async () => {
     try {
       const response = await fetch(
-        `/api/products/${productId}?organization_id=10f52461c0fc47c9be418323f2d56d5d&reverse_sort=false&page=1&size=10&Appid=NEFU0GPE7LT7HEA&Apikey=6557b99978244dbaaabdb1bfea62153520240712212554076418`,
+        `/api/products/${productId}?organization_id=${orgId}&reverse_sort=false&size=10&Appid=${appId}&Apikey=${apiKey}`,
       );
 
       return await response.json();
-      // console.log(data);
-      // setProduct(data);
     } catch (error) {
       console.error("Error fetching data:", error);
     }
   };
-
-  // useEffect(() => {
-  //   fetchData();
-  // }, []);
 
   const { data: product, isLoading } = useReactQuery(
     ["details", productId],

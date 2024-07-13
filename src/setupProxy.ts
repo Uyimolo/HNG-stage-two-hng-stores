@@ -1,36 +1,8 @@
-// const { createProxyMiddleware } = require("http-proxy-middleware");
-// module.exports = function (app) {
-//   app.use(
-//     "/api",
-//     createProxyMiddleware({
-//       target: "https://api.timbu.cloud",
-//       changeOrigin: true,
-//       pathRewrite: {
-//         "^/api": "",
-//       },
-//     }),
-//   );
-// };
 
-// import { createProxyMiddleware } from "http-proxy-middleware";
-
-// module.exports = function (app) {
-//   app.use(
-//     "/api",
-//     createProxyMiddleware({
-//       target: "https://api.timbu.cloud",
-//       changeOrigin: true,
-//       pathRewrite: {
-//         "^/api": "",
-//       },
-//     }),
-//   );
-// };
-
-// import { Application, NextFunction, Request, Response } from "express";
+import { Application } from "express";
 import { createProxyMiddleware } from "http-proxy-middleware";
 
-module.exports = function (app: { app: unknown }) {
+module.exports = function (app: Application) {
   app.use(
     "/api",
     createProxyMiddleware({

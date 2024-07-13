@@ -11,7 +11,11 @@ const Category = () => {
   const [categoryName, setCategoryName] = useState<string>("Category");
   const [loading, setLoading] = useState<boolean>(false);
 
-  const url = `/api/products?organization_id=10f52461c0fc47c9be418323f2d56d5d&reverse_sort=false&Appid=NEFU0GPE7LT7HEA&Apikey=6557b99978244dbaaabdb1bfea62153520240712212554076418&category_id=${categoryId}`;
+  const apiKey = import.meta.env.VITE_API_KEY;
+  const appId = import.meta.env.VITE_APP_ID;
+  const orgId = import.meta.env.VITE_ORG_ID;
+
+  const url = `/api/products?organization_id=${orgId}&reverse_sort=false&size=10&Appid=${appId}&Apikey=${apiKey}&category_id=${categoryId}`;
 
   const fetchData = async () => {
     setLoading(true);
@@ -37,10 +41,6 @@ const Category = () => {
     ["products", url],
     fetchData,
   );
-
-  // useEffect(() => {
-  //   fetchData();
-  // }, [url, categoryId]);
 
   return (
     <main>
