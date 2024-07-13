@@ -22,8 +22,8 @@ const NotFound = () => {
           <img src={check} alt="" className="w-5 lg:w-6" />
         </div>
 
-        <Link to="/">
-          <Button variant="primary" className="mx-auto lg:min-w-fit lg:px-8">
+        <Link to="/" className="mx-auto w-fit">
+          <Button variant="primary" className="">
             Back to Home
           </Button>
         </Link>

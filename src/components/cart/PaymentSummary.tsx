@@ -4,7 +4,12 @@ import Button from "../reusables/Button";
 import { useContext } from "react";
 import CartContext from "../../context/CartContext";
 
-const PaymentSummary = ({ variant }: { variant: "checkout" | "cart" }) => {
+interface PaymentSummaryProps {
+  variant: "checkout" | "cart";
+  disabled: boolean;
+}
+
+const PaymentSummary = ({ variant, disabled = true }: PaymentSummaryProps) => {
   const { cartItems } = useContext(CartContext);
 
   const totalPrice = cartItems.reduce(
@@ -51,14 +56,21 @@ const PaymentSummary = ({ variant }: { variant: "checkout" | "cart" }) => {
       </div>
 
       <div>
-        <Link
-          to={variant === "cart" ? "/checkout" : "/success"}
-          className={cn("block px-4", variant === "checkout" ? "mt-24" : "")}
-        >
-          <Button variant="secondary" className="mt-8 min-w-full lg:min-w-full">
-            {variant === "checkout" ? "Order Now" : "Continue to Checkout"}
-          </Button>
-        </Link>
+        {variant === "checkout" && disabled ? (
+          <div className=""></div>
+        ) : (
+          <Link
+            to={variant === "cart" ? "/checkout" : "/success"}
+            className={cn("block px-4", variant === "checkout" ? "mt-24" : "")}
+          >
+            <Button
+              variant="secondary"
+              className="mt-8 min-w-full lg:min-w-full"
+            >
+              {variant === "checkout" ? "Order Now" : "Continue to Checkout"}
+            </Button>
+          </Link>
+        )}
       </div>
     </div>
   );

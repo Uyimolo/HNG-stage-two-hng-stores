@@ -7,8 +7,12 @@ import Checkout from "./routes/Checkout";
 import Success from "./routes/Success";
 import NotFound from "./routes/NotFound";
 import CartProvider from "./context/CartProvider";
+import ProductDetails from "./routes/ProductDetails";
+import Category from "./routes/Category";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 function App() {
+  const queryClient = new QueryClient();
   const router = createBrowserRouter([
     {
       path: "/",
@@ -18,14 +22,18 @@ function App() {
         { path: "/cart", element: <Cart /> },
         { path: "/checkout", element: <Checkout /> },
         { path: "/success", element: <Success /> },
+        { path: "/products/:productId", element: <ProductDetails /> },
+        { path: "/category/:categoryId", element: <Category /> },
       ],
     },
     { path: "*", element: <NotFound /> },
   ]);
   return (
-    <CartProvider>
-      <RouterProvider router={router} />
-    </CartProvider>
+    <QueryClientProvider client={queryClient}>
+      <CartProvider>
+        <RouterProvider router={router} />
+      </CartProvider>
+    // </QueryClientProvider>
   );
 }
 

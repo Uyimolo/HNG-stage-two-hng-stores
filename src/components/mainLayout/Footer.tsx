@@ -11,18 +11,9 @@ import linkedIn from "../../assets/images/linkedIn.svg";
 import { motion } from "framer-motion";
 import { cn } from "../../utilities/cn";
 import { Link } from "react-router-dom";
+import { SingleCategory } from "../../types/types";
+import { useEffect, useState } from "react";
 
-const categoriesList = [
-  { category: "Electronics" },
-  { category: "Shorts" },
-  { category: "Shirts" },
-  { category: "Phones and gadgets" },
-  { category: "Cooking utensils" },
-  { category: "Gaming" },
-  { categroy: "Sneakers" },
-  { category: "Health" },
-  { category: "Cars" },
-];
 
 const helpSection = [
   { name: "Contact Us" },
@@ -50,9 +41,29 @@ const headingClass =
   "mb-3 text-xs font-bold font-nunito text-white xs:text-base md:text-xl lg:text-2xl";
 
 const Footer = () => {
+  const [categoryList, setCategoryList] = useState<SingleCategory[]>();
+
+  const fetchCategories = async () => {
+    try {
+      const response = await fetch(
+        "/api/categories?organization_id=10f52461c0fc47c9be418323f2d56d5d&reverse_sort=false&Appid=NEFU0GPE7LT7HEA&Apikey=6557b99978244dbaaabdb1bfea62153520240712212554076418&size=12&page=1",
+      );
+
+      const data = await response.json();
+      console.log(data);
+      setCategoryList(data.items);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+  };
+
+  useEffect(() => {
+    fetchCategories();
+  }, []);
+
   return (
     <footer className="bg-primary">
-      <div className="max-w-[1800px] mx-auto">
+      <div className="mx-auto max-w-[1800px]">
         {/* footer info */}
         <div className="grid grid-cols-[35%,1fr] px-4 py-12 lg:px-12 xl:px-16">
           {/* logo and address*/}
@@ -72,13 +83,13 @@ const Footer = () => {
               <h5 className={headingClass}>Categories</h5>
               {/* content */}
               <div className="flex flex-col gap-1">
-                {categoriesList.map((category) => (
+                {categoryList?.map((category, index) => (
                   <Link
-                    to="*"
-                    key={category.category}
+                    to={`/category/${category.id}`}
+                    key={index}
                     className={cn(footerParagraph, "hover:text-yellow")}
                   >
-                    {category.category}
+                    {category.name}
                   </Link>
                 ))}
               </div>
@@ -90,10 +101,10 @@ const Footer = () => {
               <h5 className={headingClass}>Need help?</h5>
               {/* content */}
               <div className="flex flex-col space-y-1">
-                {helpSection.map((help) => (
+                {helpSection.map((help, index) => (
                   <Link
                     to="*"
-                    key={help.name}
+                    key={index}
                     className={cn(footerParagraph, "hover:text-yellow")}
                   >
                     {help.name}
