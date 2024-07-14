@@ -73,7 +73,7 @@ const Footer = () => {
           {/* logo and address*/}
           <div className="space-y-2">
             <Logo variant="footer" />
-            <p className="text-[12px] text-white xs:text-[12px] md:text-base lg:text-2xl">
+            <p className="text-sm text-white md:text-base lg:text-2xl">
               4 Banana Street,
               <br /> Yaba Lagos State, Nigeria.
             </p>
