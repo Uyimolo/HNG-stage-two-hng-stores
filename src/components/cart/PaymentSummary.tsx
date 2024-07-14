@@ -25,13 +25,13 @@ const PaymentSummary = ({ variant, disabled = true }: PaymentSummaryProps) => {
         cartItems.length === 0 ? "hidden" : "",
       )}
     >
-      <h3 className="text-center text-xs xs:text-sm md:text-base xl:text-[text-18]">
+      <h3 className="text-center text-sm md:text-base lg:text-[text-18]">
         PAYMENT SUMMARY
       </h3>
       {/* SECOND SECTION */}
-      <div className="space-y-2 border-t-2 border-yellow px-4 pt-2 text-xs xs:text-sm md:text-base xl:text-[text-18]">
+      <div className="space-y-2 border-t-2 border-yellow px-4 pt-2 text-sm lg:text-base">
         <div className="flex justify-between">
-          <p>{`Items(${cartItems.length})`}</p>
+          <p className="">{`Items(${cartItems.length})`}</p>
           <p>
             <span className="line-through decoration-double">N</span>
             {totalPrice.toLocaleString()}
@@ -47,7 +47,7 @@ const PaymentSummary = ({ variant, disabled = true }: PaymentSummaryProps) => {
       </div>
 
       {/* THIRD SECTION */}
-      <div className="flex justify-between border-t-2 border-yellow px-4 pt-2 text-xs xs:text-sm md:text-base xl:text-[text-18]">
+      <div className="flex justify-between border-t-2 border-yellow px-4 pt-2 text-sm lg:text-base">
         <p>Total</p>
         <p>
           <span className="line-through decoration-double">N</span>
