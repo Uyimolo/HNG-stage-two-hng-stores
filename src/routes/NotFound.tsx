@@ -1,7 +1,7 @@
 import notFound from "../assets/images/page-not-found.png";
 import check from "../assets/icons/check.png";
 import Button from "../components/reusables/Button";
-import { Link } from "react-router-dom";
+import { Link, ScrollRestoration } from "react-router-dom";
 import Header from "../components/mainLayout/Header";
 import Footer from "../components/mainLayout/Footer";
 const NotFound = () => {
@@ -29,6 +29,7 @@ const NotFound = () => {
         </Link>
       </div>
       <Footer />
+      <ScrollRestoration />
     </div>
   );
 };
