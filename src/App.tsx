@@ -10,6 +10,7 @@ import CartProvider from "./context/CartProvider";
 import ProductDetails from "./routes/ProductDetails";
 import Category from "./routes/Category";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import ErrorElement from "./components/error-element/ErrorElement";
 
 function App() {
   const queryClient = new QueryClient();
@@ -17,6 +18,7 @@ function App() {
     {
       path: "/",
       element: <MainLayout />,
+      errorElement: <ErrorElement />,
       children: [
         { path: "/", element: <Products /> },
         { path: "/cart", element: <Cart /> },

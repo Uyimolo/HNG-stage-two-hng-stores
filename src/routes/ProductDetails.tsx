@@ -50,7 +50,7 @@ const ProductDetails = () => {
   // }
 
   return (
-    <main className="relative">
+    <main className="relative pb-20">
       <div className="">
         <Container className="grid gap-6 lg:grid-cols-2 lg:gap-12 max-w-[1600px] mx-auto">
           <LightBox images={product?.photos} />
