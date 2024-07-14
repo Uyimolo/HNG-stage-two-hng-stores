@@ -6,7 +6,7 @@ const Search = ({ className }: { className: string }) => {
       <input
         type="text"
         placeholder="What are you looking for"
-        className="flex h-[36px] w-full items-center rounded-[10px] bg-lightGray pl-10 text-xs placeholder:text-xs lg:text-sm"
+        className="flex h-[36px] w-full items-center rounded-[10px] bg-lightGray pl-10 text-sm placeholder:text-sm lg:text-base"
       />
       <img
         src={magnifyingGlassIcon}
