@@ -1,26 +1,39 @@
 import stars from "../../assets/images/stars.png";
 import Button from "../reusables/Button";
 import { CartState, Product } from "../../types/types";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import CartContext from "../../context/CartContext";
 // import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 // import eye from "../../assets/icons/eye-svgrepo-com.svg"
 const ProductCard = ({ product }: { product: Product }) => {
-  const { addItemToCart } = useContext<CartState>(CartContext);
+  const { addItemToCart, cartItems } = useContext<CartState>(CartContext);
 
+  const [isInCart, setIsInCart] = useState<boolean>(false)
   // console.log(product);
-
   const toBeAddedToCart = {
     name: product.name,
     id: product.id,
-    price: 1,
+    price: product.current_price && product.current_price[0].NGN[0],
     image: product.photos[0].url,
     quantity: 1,
   };
 
+  useEffect(() => {
+    if (cartItems.some((item) => item.id === product.id)) {
+      setIsInCart(true);
+    } else {
+      setIsInCart(false);
+    }
+  }, [cartItems, product.id])
+
+
+// useEffect
+
+  // console.log(product);
+
   return (
-    <div className="group overflow-hidden rounded-[5px] border-gray/60 bg-white shadow-md hover:border lg:rounded-[12px] lg:shadow-lg">
+    <div className="group overflow-hidden rounded-[5px] border-gray/60 bg-white shadow-md lg:rounded-[12px] lg:shadow-lg">
       {/* product image */}
       <div className="group relative aspect-square w-full overflow-hidden rounded-[5px] transition duration-300 group-hover:bg-gray lg:rounded-[12px]">
         {/* Product image */}
@@ -59,7 +72,7 @@ const ProductCard = ({ product }: { product: Product }) => {
           </div>
           <h4 className="text-[12px] font-bold xs:text-xs md:text-sm xl:text-base">
             <span className="line-through decoration-double">N</span>
-            {product.buying_price}
+            {product.current_price && product.current_price[0].NGN[0].toLocaleString()}
           </h4>
         </div>
         <div
@@ -70,7 +83,7 @@ const ProductCard = ({ product }: { product: Product }) => {
             variant="primary"
             className="hidden h-7 min-w-full group-hover:block md:h-7 lg:h-9 lg:min-w-full xl:h-10"
           >
-            ADD TO CART
+            {isInCart ? "ADDED TO CART" : "ADD TO CART"}
           </Button>
         </div>
       </div>

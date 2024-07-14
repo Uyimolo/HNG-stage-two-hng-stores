@@ -1,11 +1,9 @@
 import React, { useState } from "react";
 import CartContext from "./CartContext";
-import { CartItemValues, CartState} from "../types/types";
+import { CartItemValues, CartState } from "../types/types";
 
 const CartProvider: React.FC<React.PropsWithChildren> = ({ children }) => {
   const [cartItems, setCartItems] = useState<CartItemValues[]>([]);
-
-
 
   const addItemToCart = (newItem: CartItemValues) => {
     const existingItem = cartItems.find((item) => item.id === newItem.id);

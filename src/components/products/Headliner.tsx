@@ -51,7 +51,7 @@ const Headliner = () => {
             <img
               src={smilingCustomer}
               alt=""
-              className="min-w-[110%] -translate-x-[1%]"
+              className="min-w-[110%] aspect-[4/2.9] -translate-x-[1%]"
             />
           </div>
         </div>

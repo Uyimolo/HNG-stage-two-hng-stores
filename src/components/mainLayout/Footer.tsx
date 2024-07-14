@@ -12,8 +12,7 @@ import { motion } from "framer-motion";
 import { cn } from "../../utilities/cn";
 import { Link } from "react-router-dom";
 import { SingleCategory } from "../../types/types";
-import { useEffect, useState } from "react";
-
+import useReactQuery from "../../utilities/useReactQuery";
 
 const helpSection = [
   { name: "Contact Us" },
@@ -41,25 +40,30 @@ const headingClass =
   "mb-3 text-xs font-bold font-nunito text-white xs:text-base md:text-xl lg:text-2xl";
 
 const Footer = () => {
-  const [categoryList, setCategoryList] = useState<SingleCategory[]>();
+  // const [categoryList, setCategoryList] = useState<SingleCategory[]>();
 
+  const apiKey = import.meta.env.VITE_API_KEY;
+  const appId = import.meta.env.VITE_APP_ID;
+  const orgId = import.meta.env.VITE_ORG_ID;
+  
   const fetchCategories = async () => {
     try {
       const response = await fetch(
-        "/api/categories?organization_id=10f52461c0fc47c9be418323f2d56d5d&reverse_sort=false&Appid=NEFU0GPE7LT7HEA&Apikey=6557b99978244dbaaabdb1bfea62153520240712212554076418&size=12&page=1",
+        `/api/categories?organization_id=${orgId}&reverse_sort=false&size=10&Appid=${appId}&Apikey=${apiKey}&page=1`,
       );
 
       const data = await response.json();
-      console.log(data);
-      setCategoryList(data.items);
+      return data.items;
+      // setCategoryList(data.items);
     } catch (error) {
       console.error("Error fetching data:", error);
     }
   };
 
-  useEffect(() => {
-    fetchCategories();
-  }, []);
+  const { data: categoryList, isLoading } = useReactQuery(
+    ["category"],
+    fetchCategories,
+  );
 
   return (
     <footer className="bg-primary">
@@ -83,7 +87,7 @@ const Footer = () => {
               <h5 className={headingClass}>Categories</h5>
               {/* content */}
               <div className="flex flex-col gap-1">
-                {categoryList?.map((category, index) => (
+                {!isLoading && categoryList.map((category: SingleCategory, index) => (
                   <Link
                     to={`/category/${category.id}`}
                     key={index}

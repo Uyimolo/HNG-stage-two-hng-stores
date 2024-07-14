@@ -6,6 +6,7 @@ import Container from "../layout/Container";
 
 import { useParams } from "react-router-dom";
 import useReactQuery from "../utilities/useReactQuery";
+import Loading from "../components/Loading";
 
 const ProductDetails = () => {
   const { productId } = useParams();
@@ -36,7 +37,7 @@ const ProductDetails = () => {
       <div className="">
         <Container className="grid gap-6 lg:grid-cols-2 lg:gap-12">
           <LightBox images={product?.photos} />
-          {isLoading ? <div className=""></div> : <Details product={product} />}
+          {isLoading ? <Loading /> : <Details product={product} />}
         </Container>
       </div>
     </main>

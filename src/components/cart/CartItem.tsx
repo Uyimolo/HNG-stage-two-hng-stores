@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import bin from "../../assets/icons/bin.svg";
 import { CartItemValues, CartState } from "../../types/types";
 import CartContext from "../../context/CartContext";
+import { Link } from "react-router-dom";
 const CartItem = ({ cartItem }: { cartItem: CartItemValues }) => {
   const { removeItemFromCart, updateItemQuantity } =
     useContext<CartState>(CartContext);
@@ -24,11 +25,13 @@ const CartItem = ({ cartItem }: { cartItem: CartItemValues }) => {
         {/* column 1 */}
         <div className="flex gap-2 lg:gap-8">
           <div className="w-fit space-y-8 lg:space-y-10">
-            <img
-              src={" https://api.timbu.cloud/images/" + cartItem.image}
-              alt=""
-              className="aspect-square w-16 rounded-md border border-gray md:w-24 xl:w-32"
-            />
+            <Link to={`/products/${cartItem.id}`}>
+              <img
+                src={" https://api.timbu.cloud/images/" + cartItem.image}
+                alt="cartItem"
+                className="aspect-square w-16 rounded-md border border-gray md:w-24 xl:w-32"
+              />
+            </Link>
             <div
               className="flex h-fit cursor-pointer space-x-1"
               onClick={() => removeItemFromCart(cartItem.id)}
