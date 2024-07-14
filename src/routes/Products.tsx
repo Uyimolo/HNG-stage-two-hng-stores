@@ -11,7 +11,7 @@ const Products = () => {
       <Container className="">
         <Headliner />
 
-        <Container className="mx-auto  px-0 pt-3 lg:px-0 lg:pt-6 xl:px-0">
+        <Container className="mx-auto  px-0 pt-3 lg:px-0 lg:pt-6 xl:px-0 max-w-[1600px]">
           <ProductList />
         </Container>
         {/* pagination */}

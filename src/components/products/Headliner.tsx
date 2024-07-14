@@ -18,7 +18,7 @@ const Headliner = () => {
             />
 
             {/* text */}
-            <div className="z-10 -translate-x-[13%] space-y-[3vw] font-nunito text-white lg:translate-x-[38%] lg:space-y-3">
+            <div className="z-10 -translate-x-[13%] space-y-[3vw] font-nunito text-white lg:translate-x-[58%] lg:space-y-3">
               <h2 className="w-fit text-nowrap bg-orange px-1 text-[3vw]">
                 <span className="italic">70%</span> DISCOUNT
               </h2>

@@ -7,7 +7,8 @@ import Container from "../layout/Container";
 import { useParams } from "react-router-dom";
 import useReactQuery from "../utilities/useReactQuery";
 import Loading from "../components/Loading";
-import NotFound from "./NotFound";
+// import NotFound from "./NotFound";
+// import Button from "../components/reusables/Button";
 
 const ProductDetails = () => {
   const { productId } = useParams();
@@ -21,7 +22,7 @@ const ProductDetails = () => {
       const response = await fetch(
         `/api/products/${productId}?organization_id=${orgId}&reverse_sort=false&size=10&Appid=${appId}&Apikey=${apiKey}`,
       );
- 
+
       return await response.json();
     } catch (error) {
       console.error("Error fetching data:", error);
@@ -33,9 +34,20 @@ const ProductDetails = () => {
     fetchData,
   );
 
-  if (product) {
-    return <NotFound />;
-  }
+  // if (!product) {
+  //   return (
+  //     <div className="grid min-h-[500px] place-content-center">
+  //       <p className="text-xs font-bold xs:text-sm md:text-base">
+  //         Product not Found
+  //       </p>
+  //       <Link to="/" className="mx-auto w-fit">
+  //         <Button variant="primary" className="">
+  //           Back to Home
+  //         </Button>
+  //       </Link>
+  //     </div>
+  //   );
+  // }
 
   return (
     <main className="relative">
