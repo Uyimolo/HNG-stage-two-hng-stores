@@ -64,9 +64,9 @@ const ProductList = () => {
           className="flex w-fit cursor-pointer gap-2 rounded-md bg-primary p-2"
           onClick={() => setShowCategories((prevState) => !prevState)}
         >
-          <h1 className="text-xs text-white xs:text-sm lg:text-base">
+          <h3 className="text-sm text-white lg:text-base">
             See Categories
-          </h1>
+          </h3>
 
           <img
             src={caret}
