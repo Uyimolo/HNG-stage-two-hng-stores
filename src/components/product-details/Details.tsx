@@ -28,18 +28,20 @@ const Details = ({ product }: { product: Product }) => {
   }, [cartItems, product.id]);
 
   return (
-    <div className="space-y-12">
-      <div className="relative space-y-2">
-        <h3 className="text-base font-bold lg:text-lg xl:text-xl">
-          {product?.name}
-        </h3>
+    <div className="relative space-y-12">
+      <div className="space-y-2">
+        <div className="w-fit bg-orange px-2 py-1 text-white">
+          <p>Official Store</p>
+        </div>
+
+        <h3 className="text-2xl font-bold lg:text-3xl">{product?.name}</h3>
 
         <div className="flex space-x-1">
-          <img src={stars} alt="" />
+          <img src={stars} alt="" className="w-20 lg:w-32" />
           <p className="text-[6px] xs:text-[8px] lg:text-xs xl:text-sm"></p>
         </div>
 
-        <h4 className="text-sm font-bold lg:text-base">
+        <h4 className="text-xl lg:text-2xl">
           <span className="line-through decoration-double">N</span>
           {product.current_price && product.current_price.toLocaleString()}
         </h4>
@@ -49,10 +51,26 @@ const Details = ({ product }: { product: Product }) => {
         </p>
       </div>
 
-      <div className="" onClick={() => addItemToCart(toBeAddedToCart)}>
+      <div className="text-primary space-y-2">
+        <h4 className="text-base font-semibold lg:text-xl">Promotions</h4>
+        <ul className="list-disc space-y-2 pl-4 text-sm lg:text-base">
+          <li>Call 070HNGSTORE To Place Your Order.</li>
+          <li>
+            Need extra money? Loan up to{" "}
+            <span className="line-through decoration-double">N</span>500,000 on
+            the HNGPay Andaroid app.{" "}
+          </li>
+          <li>Enjoy cheaper delivery fees when you buy more.</li>
+        </ul>
+      </div>
+
+      <div
+        className="sticky bottom-6"
+        onClick={() => addItemToCart(toBeAddedToCart)}
+      >
         <Button
           variant="primary"
-          className="min-w-full border-none bg-orange hover:bg-orange/80 lg:h-12 lg:min-w-full lg:text-sm"
+          className="h-12 min-w-full border-none bg-orange hover:bg-orange/80 lg:h-12 lg:min-w-full lg:text-sm"
         >
           {isInCart ? "ADDED TO CART" : "ADD TO CART"}
         </Button>
