@@ -1,9 +1,16 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import CartContext from "./CartContext";
 import { CartItemValues, CartState } from "../types/types";
 
 const CartProvider: React.FC<React.PropsWithChildren> = ({ children }) => {
-  const [cartItems, setCartItems] = useState<CartItemValues[]>([]);
+  const [cartItems, setCartItems] = useState<CartItemValues[]>(() => {
+    const savedCartItems = localStorage.getItem("cartItems");
+    return savedCartItems ? JSON.parse(savedCartItems) : [];
+  });
+
+  useEffect(() => {
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
+  }, [cartItems]);
 
   const addItemToCart = (newItem: CartItemValues) => {
     const existingItem = cartItems.find((item) => item.id === newItem.id);

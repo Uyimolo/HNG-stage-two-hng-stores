@@ -16,7 +16,7 @@ const Navigation = ({ showNav, setShowNav }: NavigationProps) => {
   const { cartItems } = useContext(CartContext);
   const navigationItems = [
     { label: "Home", path: "/" },
-    { label: "Products", path: "/" },
+    // { label: "Products", path: "/" },
     { label: "Services", path: "/services" },
     { label: "Cart", path: "/cart" },
   ];

@@ -7,6 +7,7 @@ import Container from "../layout/Container";
 import { useParams } from "react-router-dom";
 import useReactQuery from "../utilities/useReactQuery";
 import Loading from "../components/Loading";
+import NotFound from "./NotFound";
 
 const ProductDetails = () => {
   const { productId } = useParams();
@@ -20,7 +21,7 @@ const ProductDetails = () => {
       const response = await fetch(
         `/api/products/${productId}?organization_id=${orgId}&reverse_sort=false&size=10&Appid=${appId}&Apikey=${apiKey}`,
       );
-
+ 
       return await response.json();
     } catch (error) {
       console.error("Error fetching data:", error);
@@ -31,6 +32,10 @@ const ProductDetails = () => {
     ["details", productId],
     fetchData,
   );
+
+  if (product) {
+    return <NotFound />;
+  }
 
   return (
     <main className="relative">

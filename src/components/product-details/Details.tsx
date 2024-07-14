@@ -15,7 +15,7 @@ const Details = ({ product }: { product: Product }) => {
     id: product.id,
     price: product.current_price,
     // price: product.current_price && product.current_price[0].NGN[0],
-    image: product.photos[0].url,
+    image: product?.photos[0].url,
     quantity: 1,
   };
 
