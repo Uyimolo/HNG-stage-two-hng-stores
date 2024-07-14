@@ -39,7 +39,7 @@ const CartItem = ({ cartItem }: { cartItem: CartItemValues }) => {
               onClick={() => removeItemFromCart(cartItem.id)}
             >
               <img src={bin} alt="" className="w-[14px] md:w-5" />
-              <p className="self-end text-[10px] text-primary xs:text-[10px] md:text-xs xl:text-sm">
+              <p className="self-end text-xs text-primary md:text-xs lg:text-sm">
                 Remove
               </p>
             </div>
@@ -48,10 +48,10 @@ const CartItem = ({ cartItem }: { cartItem: CartItemValues }) => {
           {/* column 2 */}
           <div className="justify-self-start">
             <div className="">
-              <h3 className="text-[12px] font-bold xs:text-xs md:text-sm xl:text-[18px]">
+              <h3 className="text-sm font-bold md:text-sm lg:text-[18px]">
                 {cartItem.name}
               </h3>
-              <p className="text-[10px] font-bold xs:text-[8px] md:text-xs xl:text-base">
+              <p className="text-xs font-bold xl:text-base">
                 In Stock
               </p>
             </div>
@@ -60,7 +60,7 @@ const CartItem = ({ cartItem }: { cartItem: CartItemValues }) => {
 
         {/* column 3 */}
         <div className="flex w-fit flex-col justify-between justify-self-end">
-          <p className="text-xs font-extrabold xs:text-xs md:text-sm xl:text-base">
+          <p className="text-sm font-extrabold xl:text-base">
             <span className="line-through decoration-double">N</span>
             {cartItem.price?.toLocaleString()}
           </p>
@@ -68,16 +68,16 @@ const CartItem = ({ cartItem }: { cartItem: CartItemValues }) => {
           {/* quantity */}
           <div className="flex space-x-1">
             <button
-              className="grid h-4 w-4 place-content-center bg-primary text-[14px] text-white md:h-5 md:w-5"
+              className="grid h-6 w-6 place-content-center bg-primary text-sm text-white lg:h-8 lg:w-8 lg:text-base"
               onClick={() => handleCount("decrease")}
             >
               -
             </button>
-            <p className="text-xs font-bold xs:text-xs lg:text-sm xl:text-base">
+            <p className="text-sm font-bold lg:text-sm xl:text-base">
               {count}
             </p>
             <button
-              className="grid h-4 w-4 place-content-center bg-primary text-[14px] text-white md:h-5 md:w-5"
+              className="grid h-6 w-6 place-content-center bg-primary text-sm text-white lg:h-8 lg:w-8 lg:text-base"
               onClick={() => handleCount("increase")}
             >
               +
