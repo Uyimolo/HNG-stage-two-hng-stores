@@ -25,7 +25,7 @@ const PaymentSummary = ({ variant, disabled = true }: PaymentSummaryProps) => {
         cartItems.length === 0 ? "hidden" : "",
       )}
     >
-      <h3 className="text-center text-sm md:text-base lg:text-[text-18]">
+      <h3 className="text-center font-bold text-sm md:text-base lg:text-[text-18]">
         PAYMENT SUMMARY
       </h3>
       {/* SECOND SECTION */}
