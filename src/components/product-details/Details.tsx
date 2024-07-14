@@ -30,7 +30,7 @@ const Details = ({ product }: { product: Product }) => {
   return (
     <div className="relative space-y-12">
       <div className="space-y-2">
-        <div className="w-fit bg-orange px-2 py-1 text-white">
+        <div className="w-fit text-nowrap bg-orange px-2 py-1 text-white">
           <p>Official Store</p>
         </div>
 
