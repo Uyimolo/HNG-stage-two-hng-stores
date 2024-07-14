@@ -96,7 +96,7 @@ const CheckoutDetails = ({
                   <div className="rounded-full border border-primary p-[2px]">
                     <div
                       className={cn(
-                        "aspect-square w-3 cursor-pointer rounded-full border border-gray",
+                        "aspect-square w-3 cursor-pointer rounded-full border border-primary",
                         paymentMethod === "on delivery" ? "bg-primary" : "",
                       )}
                       onClick={() => setPaymentMethod("on delivery")}
@@ -111,7 +111,7 @@ const CheckoutDetails = ({
                       <div className="rounded-full border border-primary p-[2px]">
                         <div
                           className={cn(
-                            "aspect-square w-3 cursor-pointer rounded-full border border-gray",
+                            "aspect-square w-3 cursor-pointer rounded-full border border-primary",
                             paymentMethod === "on delivery" ? "" : "bg-primary",
                           )}
                           onClick={() => setPaymentMethod("pre payment")}
