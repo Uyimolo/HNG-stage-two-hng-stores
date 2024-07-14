@@ -45,7 +45,7 @@ const Footer = () => {
   const apiKey = import.meta.env.VITE_API_KEY;
   const appId = import.meta.env.VITE_APP_ID;
   const orgId = import.meta.env.VITE_ORG_ID;
-  
+
   const fetchCategories = async () => {
     try {
       const response = await fetch(
@@ -69,7 +69,7 @@ const Footer = () => {
     <footer className="bg-primary">
       <div className="mx-auto max-w-[1800px]">
         {/* footer info */}
-        <div className="grid grid-cols-[35%,1fr] px-4 py-12 lg:px-12 xl:px-16">
+        <div className="grid grid-cols-[35%,1fr] px-4 py-12 pb-20 lg:px-12 xl:px-16">
           {/* logo and address*/}
           <div className="space-y-2">
             <Logo variant="footer" />
@@ -87,15 +87,16 @@ const Footer = () => {
               <h5 className={headingClass}>Categories</h5>
               {/* content */}
               <div className="flex flex-col gap-1">
-                {!isLoading && categoryList.map((category: SingleCategory, index) => (
-                  <Link
-                    to={`/category/${category.id}`}
-                    key={index}
-                    className={cn(footerParagraph, "hover:text-yellow")}
-                  >
-                    {category.name}
-                  </Link>
-                ))}
+                {!isLoading &&
+                  categoryList.map((category: SingleCategory, index) => (
+                    <Link
+                      to={`/category/${category.id}`}
+                      key={index}
+                      className={cn(footerParagraph, "hover:text-yellow")}
+                    >
+                      {category.name}
+                    </Link>
+                  ))}
               </div>
             </div>
 

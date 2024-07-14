@@ -11,6 +11,7 @@ type checkoutDetailsProps = {
   street: string;
   phoneNumber: string;
   setShowDetails: (details: boolean) => void;
+  checkoutFormValid: boolean;
 };
 
 const cards = [paypal, masterCard, visa];
@@ -19,6 +20,7 @@ const CheckoutDetails = ({
   street = "",
   phoneNumber = "",
   setShowDetails,
+  checkoutFormValid,
 }: checkoutDetailsProps) => {
   const [checkoutEnabled, setCheckoutEnabled] = useState<boolean>(false);
   const [paymentMethod, setPaymentMethod] = useState<
@@ -144,7 +146,10 @@ const CheckoutDetails = ({
       </div>
 
       <div className="sticky top-36">
-        <PaymentSummary variant="checkout" disabled={!checkoutEnabled} />
+        <PaymentSummary
+          variant="checkout"
+          disabled={!checkoutEnabled || !checkoutFormValid}
+        />
       </div>
     </div>
   );

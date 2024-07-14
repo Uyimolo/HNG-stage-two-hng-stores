@@ -6,10 +6,10 @@ import Container from "../layout/Container";
 const formInfo = [
   { label: "First Name", value: "" },
   { label: "Last Name", value: "" },
-  { label: "Street", value: "4 Banana Street, Magodo Brooks, Lagos State." },
+  { label: "Street", value: "" },
   { label: "State", value: "" },
   { label: "Postal Code", value: "" },
-  { label: "Phone Number", value: "09134225053" },
+  { label: "Phone Number", value: "" },
 ];
 
 type FormField = {
@@ -18,6 +18,7 @@ type FormField = {
 }[];
 const Checkout = () => {
   const [showDetails, setShowDetails] = useState<boolean>(true);
+  const [checkoutFormValid, setCheckoutFormValid] = useState<boolean>(false);
 
   const [formInfoDetails, setFormInfoDetails] = useState<FormField>(formInfo);
 
@@ -29,12 +30,14 @@ const Checkout = () => {
             street={formInfoDetails[2].value}
             phoneNumber={formInfoDetails[5].value}
             setShowDetails={setShowDetails}
+            checkoutFormValid={checkoutFormValid}
           />
         ) : (
           <CheckoutForm
             formInfoDetails={formInfoDetails}
             setShowDetails={setShowDetails}
-            setFormInfoDetails={setFormInfoDetails}
+              setFormInfoDetails={setFormInfoDetails}
+              setCheckoutFormValid={setCheckoutFormValid}
           />
         )}
       </Container>

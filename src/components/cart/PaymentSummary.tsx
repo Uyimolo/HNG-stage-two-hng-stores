@@ -64,7 +64,7 @@ const PaymentSummary = ({ variant, disabled = true }: PaymentSummaryProps) => {
               variant="secondary"
               className="mt-8 min-w-full lg:min-w-full"
             >
-              Please fill in payment form
+              Please fill in payment and checkout forms
             </Button>
           </div>
         ) : (
