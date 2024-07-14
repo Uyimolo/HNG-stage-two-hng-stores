@@ -88,6 +88,7 @@ const Search = ({ className }: { className: string }) => {
               <Link
                 to={`/products/${product?.id}`}
                 className="flex items-center justify-between text-sm"
+                onClick={() => setSearchValue('')}
               >
                 <p>{product?.name}</p>
                 {/* <p>
