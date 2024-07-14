@@ -30,7 +30,7 @@ const Details = ({ product }: { product: Product }) => {
   return (
     <div className="space-y-12">
       <div className="relative space-y-2">
-        <h3 className="text-xs font-bold xs:text-sm lg:text-base xl:text-xl">
+        <h3 className="text-base font-bold lg:text-lg xl:text-xl">
           {product?.name}
         </h3>
 
@@ -39,12 +39,12 @@ const Details = ({ product }: { product: Product }) => {
           <p className="text-[6px] xs:text-[8px] lg:text-xs xl:text-sm"></p>
         </div>
 
-        <h4 className="text-[12px] font-bold xs:text-xs md:text-sm xl:text-base">
+        <h4 className="text-sm font-bold lg:text-base">
           <span className="line-through decoration-double">N</span>
           {product.current_price && product.current_price.toLocaleString()}
         </h4>
 
-        <p className="max-w-md pt-2 text-[10px] xs:text-xs lg:text-sm xl:text-base">
+        <p className="max-w-md pt-2 text-sm lg:text-base">
           {product?.description}
         </p>
       </div>
