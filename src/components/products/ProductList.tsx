@@ -37,7 +37,7 @@ const ProductList = () => {
     }
   };
 
-  const { data: products, isLoading } = useReactQuery(["products"], fetchData);
+  const { data: products, isLoading } = useReactQuery(["products", page], fetchData);
 
   const fetchCategories = async () => {
     try {
