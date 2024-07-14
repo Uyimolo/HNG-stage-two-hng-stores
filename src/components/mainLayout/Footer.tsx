@@ -132,7 +132,7 @@ const Footer = () => {
                       whileHover={{ scale: 1.5 }}
                       src={paymentPlatform.icon}
                       alt={paymentPlatform.platform}
-                      className="w-[14px] cursor-pointer lg:w-5"
+                      className="w-[18px] cursor-pointer lg:w-5"
                     />
                   ))}
                 </div>
@@ -149,7 +149,7 @@ const Footer = () => {
                       key={social.platform}
                       src={social.icon}
                       alt={social.platform}
-                      className="cursor-pointer lg:w-5"
+                      className="cursor-pointer w-[18px] lg:w-5"
                     />
                   ))}
                 </div>
@@ -167,7 +167,7 @@ const Footer = () => {
                     whileHover={{ scale: 1.5 }}
                     src={social.icon}
                     alt={social.platform}
-                    className="w-[14px] cursor-pointer"
+                    className="w-[18px] cursor-pointer"
                   />
                 ))}
               </div>
