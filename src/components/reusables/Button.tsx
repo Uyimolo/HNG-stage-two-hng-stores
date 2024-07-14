@@ -25,7 +25,7 @@ const Button = ({
     <button
       type={type}
       className={cn(
-        "text-nowrap rounded-[6px] border px-4 py-1.5 text-xs transition duration-100 lg:min-w-[3rem] lg:px-5 lg:text-base",
+        "text-nowrap rounded-[6px] border px-4 py-1.5 text-sm transition duration-100 lg:min-w-[3rem] lg:px-5 lg:text-base",
         buttonClass,
         className,
       )}
