@@ -5,12 +5,16 @@ interface ButtonProps {
   className?: string;
   children: React.ReactNode;
   type?: "button" | "reset" | "submit";
+  icon?: string;
+  iconClass?: string;
 }
 const Button = ({
   variant,
   className,
   children,
   type = "button",
+  icon,
+  iconClass,
 }: ButtonProps) => {
   let buttonClass = "";
 
@@ -25,12 +29,13 @@ const Button = ({
     <button
       type={type}
       className={cn(
-        "text-nowrap rounded-[6px] border px-4 py-1.5 text-sm transition duration-100 lg:min-w-[3rem] lg:px-5 lg:text-base",
+        "flex items-center justify-center gap-2 text-nowrap rounded-[6px] border px-4 py-1.5 text-sm transition duration-100 lg:min-w-[3rem] lg:px-5 lg:text-base",
         buttonClass,
         className,
       )}
     >
       {children}
+      <img src={icon} alt="" className={iconClass} />
     </button>
   );
 };

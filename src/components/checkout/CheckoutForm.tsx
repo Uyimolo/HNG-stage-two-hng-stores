@@ -111,45 +111,47 @@ const CheckoutForm = ({
       setShowDetails(true);
       setCheckoutFormValid(true);
     } else {
+      setShowDetails(true);
+
       setErrors(newErrors);
     }
   };
 
   return (
-    <form
-      onSubmit={handleSubmit}
-      className="mx-auto grid max-w-2xl gap-4 px-4 pb-20 pt-10 lg:px-12 lg:pt-28 xl:px-16"
-    >
-      {formInfoDetails.map((field) => (
-        <div key={field.label} className="flex flex-col">
-          <input
-            type="text"
-            id={field.label}
-            placeholder={field.label}
-            value={field.value}
-            className={cn(
-              "h-12 w-full rounded-md bg-gray pl-4 text-xs placeholder:text-neutral-500 lg:text-sm",
-              errors[field.label]
-                ? "border border-red-500"
-                : !field.value.length
-                  ? ""
-                  : "border-2 border-primary",
+    <form onSubmit={handleSubmit} className="mx-auto max-w-xl lg:max-w-2xl">
+      <h2 className="text-base lg:text-lg font-bold">Shipping Details</h2>
+      <div className="grid gap-4  pb-20 pt-10 md:px-0">
+        {formInfoDetails.map((field) => (
+          <div key={field.label} className="flex flex-col">
+            <input
+              type="text"
+              id={field.label}
+              placeholder={field.label}
+              value={field.value}
+              className={cn(
+                "h-12 w-full rounded-md bg-gray pl-4 text-xs placeholder:text-neutral-500 lg:text-sm",
+                errors[field.label]
+                  ? "border border-red-500"
+                  : !field.value.length
+                    ? ""
+                    : "border-2 border-primary",
+              )}
+              onChange={(e) => handleFormData(field.label, e.target.value)}
+            />
+            {errors[field.label] && (
+              <p className="mt-1 text-xs text-red-500">{errors[field.label]}</p>
             )}
-            onChange={(e) => handleFormData(field.label, e.target.value)}
-          />
-          {errors[field.label] && (
-            <p className="mt-1 text-xs text-red-500">{errors[field.label]}</p>
-          )}
-        </div>
-      ))}
+          </div>
+        ))}
 
-      <Button
-        type="submit"
-        variant="primary"
-        className="h-12 min-w-full lg:min-w-full"
-      >
-        Save
-      </Button>
+        <Button
+          type="submit"
+          variant="primary"
+          className="h-12 min-w-full lg:min-w-full"
+        >
+          Save
+        </Button>
+      </div>
     </form>
   );
 };

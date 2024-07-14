@@ -1,5 +1,7 @@
 import { useState } from "react";
 import Button from "../reusables/Button";
+import loading from "../../assets/icons/loading-16-svgrepo-com.svg"
+import { cn } from "../../utilities/cn";
 
 type PaymentFormProps = {
   setShowPaymentForm: (value: boolean) => void;
@@ -11,6 +13,8 @@ const PaymentForm = ({
   setCheckoutEnabled,
 }: PaymentFormProps) => {
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
+
+  const [cardValid, setCardValid] = useState<boolean>()
 
   const [formValues, setFormValues] = useState({
     cardNumber: "",
@@ -69,16 +73,25 @@ const PaymentForm = ({
     setErrors(newErrors);
 
     if (allValid) {
-      setInterval(() => {
+      setCardValid(true);
+
+      setTimeout(() => {
          setShowPaymentForm(false);
-         setCheckoutEnabled(true);
+        setCheckoutEnabled(true);
+        setCardValid(false)
+        setFormValues({
+          cardNumber: "",
+          expiryDate: "",
+          password: "",
+          cvv: "",
+        });
       }, 2000 )
      
     }
   };
 
   const formInputClass =
-    "bg-gray rounded-md py-2 text-xs placeholder:text-[10px] pl-4 lg:py-3 lg:text-sm lg:placeholder:text-sm";
+    "bg-gray rounded-md py-3 text-xs placeholder:text-[10px] pl-4 lg:py-3 lg:text-sm lg:placeholder:text-sm";
 
   return (
     <div className="max-w-[17rem] space-y-2 px-4 lg:max-w-[25rem]">
@@ -119,16 +132,16 @@ const PaymentForm = ({
         </form>
       </div>
       <div className="" onClick={handleSubmit}>
-        <Button variant="primary" className="min-w-full lg:h-10 lg:min-w-full">
+        <Button icon={loading} iconClass={cn("w-4",cardValid ? "loading-spinner block" : "hidden")} variant="primary" className="min-w-full lg:h-10 lg:min-w-full">
           Confirm
         </Button>
       </div>
       {/* errors */}
-      <div className="text-[10px] text-red-500">
-        <p>{errors.cvv && errors.cvv}</p>
-        <p>{errors.cardNumber && errors.cardNumber}</p>
-        <p>{errors.password && errors.password}</p>
-        <p>{errors.expiryDate && errors.expiryDate}</p>
+      <div className="text-[10px] md:text-xs text-red-500">
+        <p >{errors.cvv && errors.cvv}</p>
+        <p >{errors.cardNumber && errors.cardNumber}</p>
+        <p >{errors.password && errors.password}</p>
+        <p >{errors.expiryDate && errors.expiryDate}</p>
       </div>
     </div>
   );

@@ -72,14 +72,14 @@ const CheckoutDetails = ({
                 </h3>
                 {deets.title === "CUSTOMER ADDRESS" && (
                   <p
-                    className="cursor-pointer text-sm text-primary md:text-sm lg:hover:underline lg:text-base"
+                    className="cursor-pointer text-xs text-primary xs:text-sm md:text-sm lg:text-base lg:hover:underline"
                     onClick={() => setShowDetails(false)}
                   >
-                    Change
+                    Set Personal Info
                   </p>
                 )}
               </div>
-              <div className="border-t-2 border-yellow px-2 pb-12 pt-4 text-sm lg:text-base lg:px-4">
+              <div className="border-t-2 border-yellow px-2 pb-12 pt-4 text-sm lg:px-4 lg:text-base">
                 <p>{deets.value1}</p>
                 <p>{deets.value2}</p>
               </div>
@@ -93,38 +93,42 @@ const CheckoutDetails = ({
               </div>
               <div className="space-y-2 border-t-2 border-yellow px-2 pt-4 text-xs xs:text-xs md:text-sm lg:px-4 xl:text-base">
                 <div className="flex items-center space-x-2">
-                  <div
-                    className={cn(
-                      "aspect-square w-3 cursor-pointer rounded-full border border-gray",
-                      paymentMethod === "on delivery" ? "bg-primary" : "",
-                    )}
-                    onClick={() => setPaymentMethod("on delivery")}
-                  ></div>
+                  <div className="rounded-full border border-primary p-[2px]">
+                    <div
+                      className={cn(
+                        "aspect-square w-3 cursor-pointer rounded-full border border-gray",
+                        paymentMethod === "on delivery" ? "bg-primary" : "",
+                      )}
+                      onClick={() => setPaymentMethod("on delivery")}
+                    ></div>
+                  </div>
                   <p className="text-sm lg:text-base">{deets.value1}</p>
                 </div>
 
-                <div className="flex items-start justify-between">
+                <div className="flex flex-col xs:flex-row xs:items-start xs:justify-between">
                   <div className="pb-4">
                     <div className="flex items-center space-x-2">
-                      <div
-                        className={cn(
-                          "aspect-square w-3 cursor-pointer rounded-full border border-gray",
-                          paymentMethod === "on delivery" ? "" : "bg-primary",
-                        )}
-                        onClick={() => setPaymentMethod("pre payment")}
-                      ></div>
+                      <div className="rounded-full border border-primary p-[2px]">
+                        <div
+                          className={cn(
+                            "aspect-square w-3 cursor-pointer rounded-full border border-gray",
+                            paymentMethod === "on delivery" ? "" : "bg-primary",
+                          )}
+                          onClick={() => setPaymentMethod("pre payment")}
+                        ></div>
+                      </div>
                       <p className="text-sm lg:text-sm">{deets.value2}</p>
                     </div>
 
                     <p className="pl-4 text-sm lg:text-base">{deets.value3}</p>
                   </div>
-                  <div className="flex space-x-2">
+                  <div className="flex w-fit space-x-2 self-end xs:self-start">
                     {cards.map((card, index) => (
                       <img
                         src={card}
                         alt=""
                         key={index}
-                        className="w-4 lg:w-5"
+                        className="w-6 lg:w-5"
                       />
                     ))}
                   </div>

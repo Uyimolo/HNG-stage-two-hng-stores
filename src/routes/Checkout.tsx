@@ -23,7 +23,7 @@ const Checkout = () => {
   const [formInfoDetails, setFormInfoDetails] = useState<FormField>(formInfo);
 
   return (
-    <main className="">
+    <main className="pt-1">
       <Container>
         {showDetails ? (
           <CheckoutDetails

@@ -52,7 +52,7 @@ const ProductDetails = () => {
   return (
     <main className="relative">
       <div className="">
-        <Container className="grid gap-6 lg:grid-cols-2 lg:gap-12">
+        <Container className="grid gap-6 lg:grid-cols-2 lg:gap-12 max-w-[1600px] mx-auto">
           <LightBox images={product?.photos} />
           {isLoading ? <Loading /> : <Details product={product} />}
         </Container>

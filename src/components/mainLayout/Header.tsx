@@ -32,7 +32,10 @@ const Header = () => {
         </div>
         {/* nav component */}
 
+        
         <Navigation showNav={showNav} setShowNav={setShowNav} />
+
+        {/* navigation modal background (I like to call it a curtain) */}
         <AnimatePresence>
           {showNav && (
             <motion.div
@@ -40,11 +43,12 @@ const Header = () => {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 1 }}
-              className="fixed bottom-0 left-0 top-0 z-10 h-screen w-full bg-neutral-700/10 lg:hidden"
+              className="fixed bottom-0 left-0 top-0 z-10 h-screen w-full bg-neutral-700/50 lg:hidden"
               onClick={() => setShowNav(false)}
             ></motion.div>
           )}
         </AnimatePresence>
+
         {/* -----icons-------- */}
 
         <div className="order-2 flex w-fit space-x-2 justify-self-end lg:order-4">

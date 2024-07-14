@@ -22,7 +22,7 @@ const CartItem = ({ cartItem }: { cartItem: CartItemValues }) => {
   }, [count, cartItem.id]);
 
   return (
-    <div className="h-auto border border-gray border-t-yellow px-2 py-4 lg:px-4">
+    <div className="h-auto border border-gray border-t-yellow border-b-0 px-2 py-4 lg:px-4">
       <div className="flex justify-between gap-2 pt-1 lg:py-6">
         {/* column 1 */}
         <div className="flex gap-2 lg:gap-8">
@@ -51,9 +51,7 @@ const CartItem = ({ cartItem }: { cartItem: CartItemValues }) => {
               <h3 className="text-sm font-bold md:text-sm lg:text-[18px]">
                 {cartItem.name}
               </h3>
-              <p className="text-xs font-bold xl:text-base">
-                In Stock
-              </p>
+              <p className="text-xs font-bold xl:text-base">In Stock</p>
             </div>
           </div>
         </div>
@@ -66,18 +64,16 @@ const CartItem = ({ cartItem }: { cartItem: CartItemValues }) => {
           </p>
 
           {/* quantity */}
-          <div className="flex space-x-1">
+          <div className="flex items-center space-x-1">
             <button
-              className="grid h-6 w-6 place-content-center bg-primary text-sm text-white lg:h-8 lg:w-8 lg:text-base"
+              className="grid h-6 w-6 place-content-center rounded bg-primary text-sm text-white lg:h-8 lg:w-8 lg:text-base"
               onClick={() => handleCount("decrease")}
             >
               -
             </button>
-            <p className="text-sm font-bold lg:text-sm xl:text-base">
-              {count}
-            </p>
+            <p className="text-sm font-bold lg:text-sm xl:text-base">{count}</p>
             <button
-              className="grid h-6 w-6 place-content-center bg-primary text-sm text-white lg:h-8 lg:w-8 lg:text-base"
+              className="grid h-6 w-6 place-content-center rounded bg-primary text-sm text-white lg:h-8 lg:w-8 lg:text-base"
               onClick={() => handleCount("increase")}
             >
               +

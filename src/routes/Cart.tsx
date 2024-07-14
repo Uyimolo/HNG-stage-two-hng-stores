@@ -31,7 +31,7 @@ const Cart = () => {
               Cart ({cartItems.length})
             </h2>
             {cartItems.length ? (
-              <div className="min-h-2">
+              <div className="min-h-2 border-b border-gray">
                 <AnimatePresence>
                   {cartItems?.map((cartItem) => (
                     <motion.div
