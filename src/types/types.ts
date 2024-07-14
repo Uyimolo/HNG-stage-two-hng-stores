@@ -73,9 +73,9 @@ export interface SingleCategory {
   is_deleted: boolean;
   description: string;
   category_type: string;
-  subcategories: unknown[];
-  entity_items: unknown[];
-  parents: unknown[];
-  photos: unknown[];
+  subcategories: string[];
+  entity_items: string[];
+  parents: string[];
+  photos: string[];
   url_slug: string | null;
 }
