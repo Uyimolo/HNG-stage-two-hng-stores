@@ -80,7 +80,7 @@ const Footer = () => {
           </div>
 
           {/* other information */}
-          <div className="grid grid-cols-2 gap-x-2 gap-y-4 lg:grid-cols-3">
+          <div className="grid grid-cols-2 gap-x-2 gap-y-8 lg:gap-y-4 lg:grid-cols-3">
             {/* categories */}
             <div className="">
               {/* heading */}
