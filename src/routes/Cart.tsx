@@ -24,6 +24,7 @@ const Cart = () => {
               <PaymentSummary variant="cart" />
             </div>
           </div>
+
           {/* cart */}
           <div>
             <h2 className="rounded-t-md border border-gray p-2 text-sm font-bold lg:p-4 lg:text-lg">
@@ -52,7 +53,7 @@ const Cart = () => {
                   You have no products in your cart
                 </p>
 
-                <Link to="/">
+                <Link to="/" className="mx-auto w-fit">
                   <Button variant="primary" className="mx-auto lg:min-w-full">
                     Back to Home
                   </Button>
@@ -62,7 +63,7 @@ const Cart = () => {
           </div>
         </div>
 
-        <div className="right-12 top-80 mt-4 grid w-full lg:fixed md:hidden">
+        <div className="right-12 top-80 mt-4 grid w-full md:hidden lg:fixed">
           <PaymentSummary variant="cart" />
         </div>
       </Container>

@@ -6,6 +6,9 @@ import Container from "../layout/Container";
 
 import { useParams } from "react-router-dom";
 import useReactQuery from "../utilities/useReactQuery";
+import Loading from "../components/Loading";
+// import NotFound from "./NotFound";
+// import Button from "../components/reusables/Button";
 
 const ProductDetails = () => {
   const { productId } = useParams();
@@ -31,12 +34,27 @@ const ProductDetails = () => {
     fetchData,
   );
 
+  // if (!product) {
+  //   return (
+  //     <div className="grid min-h-[500px] place-content-center">
+  //       <p className="text-xs font-bold xs:text-sm md:text-base">
+  //         Product not Found
+  //       </p>
+  //       <Link to="/" className="mx-auto w-fit">
+  //         <Button variant="primary" className="">
+  //           Back to Home
+  //         </Button>
+  //       </Link>
+  //     </div>
+  //   );
+  // }
+
   return (
     <main className="relative">
       <div className="">
         <Container className="grid gap-6 lg:grid-cols-2 lg:gap-12">
           <LightBox images={product?.photos} />
-          {isLoading ? <div className=""></div> : <Details product={product} />}
+          {isLoading ? <Loading /> : <Details product={product} />}
         </Container>
       </div>
     </main>

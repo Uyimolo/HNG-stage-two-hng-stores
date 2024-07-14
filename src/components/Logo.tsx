@@ -1,5 +1,6 @@
 import logo from "../assets/images/Frame 40.svg";
 import footerLogo from "../assets/images/Frame 40-footer.svg";
+import { Link } from "react-router-dom";
 
 interface logoProps {
   variant: "header" | "footer";
@@ -7,19 +8,23 @@ interface logoProps {
 const Logo = ({ variant }: logoProps) => {
   if (variant === "header") {
     return (
-      <img
-        src={logo}
-        alt="HNG Stores"
-        className="w-[53px] md:w-[80px] lg:w-[13rem]"
-      />
+      <Link to="/">
+        <img
+          src={logo}
+          alt="HNG Stores"
+          className="w-[53px] xs:w-[70px] md:w-[80px] lg:w-[13rem]"
+        />
+      </Link>
     );
   }
   return (
-    <img
-      src={footerLogo}
-      alt="HNG Stores"
-      className="w-[53px] md:w-[80px] lg:w-[13rem]"
-    />
+    <Link to="/">
+      <img
+        src={footerLogo}
+        alt="HNG Stores"
+        className="w-[53px] xs:w-[70px] md:w-[80px] lg:w-[13rem]"
+      />
+    </Link>
   );
 };
 

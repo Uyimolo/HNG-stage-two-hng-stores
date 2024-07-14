@@ -2,7 +2,12 @@ import deliveryGirl from "../assets/images/delivery-coming.png";
 import check from "../assets/icons/check.png";
 import Button from "../components/reusables/Button";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { CartState } from "../types/types";
+import CartContext from "../context/CartContext";
 const Success = () => {
+  const { clearCart } = useContext<CartState>(CartContext);
+
   return (
     <div className="grid h-screen max-h-[700px] place-content-center gap-4 px-4 py-20 lg:max-h-[700px] lg:px-12 xl:px-16">
       <img src={deliveryGirl} alt="Rider on bike" />
@@ -14,7 +19,7 @@ const Success = () => {
         <img src={check} alt="" className="w-5 lg:w-6" />
       </div>
 
-      <Link to="/" className="w-fit mx-auto">
+      <Link to="/" className="mx-auto w-fit" onClick={clearCart}>
         <Button variant="primary" className="">
           Back to Home
         </Button>

@@ -12,11 +12,14 @@ interface NavigationProps {
 }
 const Navigation = ({ showNav, setShowNav }: NavigationProps) => {
   const location = useLocation();
+
   const isDesktop = useMediaQuery({ minWidth: 1024 });
+
   const { cartItems } = useContext(CartContext);
+
   const navigationItems = [
-    { label: "Home", path: "/" },
-    { label: "Products", path: "/" },
+    { label: "Shop", path: "/" },
+    // { label: "Products", path: "/" },
     { label: "Services", path: "/services" },
     { label: "Cart", path: "/cart" },
   ];

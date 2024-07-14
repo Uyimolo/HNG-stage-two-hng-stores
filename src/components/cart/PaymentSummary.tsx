@@ -57,7 +57,16 @@ const PaymentSummary = ({ variant, disabled = true }: PaymentSummaryProps) => {
 
       <div>
         {variant === "checkout" && disabled ? (
-          <div className=""></div>
+          <div
+            className={cn("block px-4", variant === "checkout" ? "mt-24" : "")}
+          >
+            <Button
+              variant="secondary"
+              className="mt-8 min-w-full lg:min-w-full"
+            >
+              Please fill in payment and checkout forms
+            </Button>
+          </div>
         ) : (
           <Link
             to={variant === "cart" ? "/checkout" : "/success"}

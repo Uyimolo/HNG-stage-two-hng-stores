@@ -1,13 +1,3 @@
-// export type Product = {
-//   id: number;
-//   title: string;
-//   category: string;
-//   price: number;
-//   image: string;
-//   rating: number;
-//   quantity: number;
-// };
-
 // Interface for Photo
 export interface Photo {
   model_name: string;
@@ -16,14 +6,12 @@ export interface Photo {
   filename: string;
   url: string;
   is_featured: boolean;
-  // ... other photo properties
 }
 
 // Interface for Category
 export interface Category {
   organization_id: string;
   name: string;
-  // ... other category properties
 }
 
 export interface Product {
@@ -39,22 +27,17 @@ export interface Product {
   unavailable_end: string | null;
   id: string;
   parent_product_id: string | null;
-  parent: unknown; 
+  parent: unknown;
   organization_id: string;
-  product_image: string[]; 
+  product_image: string[];
   categories: Category[];
   date_created: string;
   last_updated: string;
   user_id: string;
   photos: Photo[];
-  current_price: {
-    [currency: string]: {
-      [x: string]: unknown;
-      price: number | null;
-      discount?: unknown[];
-      retail_price?: number | null;
-    };
-  };
+  current_price?: number | undefined;
+  // CurrencyPrice[] |
+
   is_deleted: boolean;
   available_quantity: number;
   selling_price: number | null;
@@ -62,6 +45,10 @@ export interface Product {
   buying_price: number | null;
   extra_infos: unknown | null;
 }
+
+// type CurrencyPrice = {
+//   [currencyCode: string]: [number, unknown, unknown[]];
+// };
 
 export interface CartState {
   cartItems: CartItemValues[];
@@ -74,7 +61,7 @@ export interface CartState {
 export type CartItemValues = {
   name: string;
   image: string;
-  price: number | null;
+  price: number | undefined;
   id: string;
   quantity: number;
 };
@@ -86,9 +73,9 @@ export interface SingleCategory {
   is_deleted: boolean;
   description: string;
   category_type: string;
-  subcategories: unknown[]; // You can replace `any` with a more specific type if needed
-  entity_items: unknown[]; // You can replace `any` with a more specific type if needed
-  parents: unknown[]; // You can replace `any` with a more specific type if needed
-  photos: unknown[]; // You can replace `any` with a more specific type if needed
+  subcategories: unknown[];
+  entity_items: unknown[];
+  parents: unknown[];
+  photos: unknown[];
   url_slug: string | null;
 }

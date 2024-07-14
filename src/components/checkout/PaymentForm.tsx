@@ -123,6 +123,7 @@ const PaymentForm = ({
           Confirm
         </Button>
       </div>
+      {/* errors */}
       <div className="text-[10px] text-red-500">
         <p>{errors.cvv && errors.cvv}</p>
         <p>{errors.cardNumber && errors.cardNumber}</p>

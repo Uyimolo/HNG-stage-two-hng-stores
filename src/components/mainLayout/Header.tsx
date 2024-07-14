@@ -14,7 +14,9 @@ import { AnimatePresence, motion } from "framer-motion";
 
 const Header = () => {
   const [showNav, setShowNav] = useState(false);
+
   const isDesktop = useMediaQuery({ minWidth: 1024 });
+
   const { cartItems } = useContext(CartContext);
 
   return (

@@ -4,9 +4,14 @@ interface ButtonProps {
   variant: string;
   className?: string;
   children: React.ReactNode;
-  type?: "button"| 'reset'| "submit";
+  type?: "button" | "reset" | "submit";
 }
-const Button = ({ variant, className, children, type='button' }: ButtonProps) => {
+const Button = ({
+  variant,
+  className,
+  children,
+  type = "button",
+}: ButtonProps) => {
   let buttonClass = "";
 
   if (variant === "primary") {
@@ -14,7 +19,7 @@ const Button = ({ variant, className, children, type='button' }: ButtonProps) =>
   } else if (variant === "outline") {
     buttonClass = "bg-white border-primary hover:bg-primary hover:text-white";
   } else if (variant === "secondary") {
-    buttonClass = "bg-orange hover:bg-orange/80";
+    buttonClass = "bg-orange hover:bg-orange/90 border-orange";
   }
   return (
     <button
