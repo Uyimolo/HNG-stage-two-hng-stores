@@ -9,7 +9,9 @@ type FormField = {
 
 type FormInfo = {
   setShowDetails: (details: boolean) => void;
+
   setFormInfoDetails: (details: FormField[]) => void;
+
   formInfoDetails: FormField[];
   setCheckoutFormValid: (isValid: boolean) => void;
 };

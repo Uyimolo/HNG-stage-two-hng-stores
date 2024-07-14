@@ -8,7 +8,9 @@ import Loading from "../components/Loading";
 
 const Category = () => {
   const { categoryId } = useParams<string>();
+
   const [categoryName, setCategoryName] = useState<string>("Category");
+  
   const [loading, setLoading] = useState<boolean>(false);
 
   const apiKey = import.meta.env.VITE_API_KEY;

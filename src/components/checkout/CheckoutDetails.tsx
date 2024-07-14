@@ -23,9 +23,11 @@ const CheckoutDetails = ({
   checkoutFormValid,
 }: checkoutDetailsProps) => {
   const [checkoutEnabled, setCheckoutEnabled] = useState<boolean>(false);
+
   const [paymentMethod, setPaymentMethod] = useState<
     "on delivery" | "pre payment"
   >("on delivery");
+
   const [showPaymentForm, setShowPaymentForm] = useState<boolean>(false);
 
   useEffect(() => {

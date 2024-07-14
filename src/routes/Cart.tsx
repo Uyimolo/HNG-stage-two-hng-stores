@@ -24,6 +24,7 @@ const Cart = () => {
               <PaymentSummary variant="cart" />
             </div>
           </div>
+
           {/* cart */}
           <div>
             <h2 className="rounded-t-md border border-gray p-2 text-sm font-bold lg:p-4 lg:text-lg">

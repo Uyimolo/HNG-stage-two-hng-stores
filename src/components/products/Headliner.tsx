@@ -22,20 +22,24 @@ const Headliner = () => {
               <h2 className="w-fit text-nowrap bg-orange px-1 text-[3vw]">
                 <span className="italic">70%</span> DISCOUNT
               </h2>
+
               <div className="space-y-[0.1vw]">
                 <h1 className="2xl:text-4 text-nowrap text-[2.6vw]">
                   IPHONE 15 PRO MAX
                 </h1>
-                <h3 className="2xl:text-[2.2em mb-[1vw] lg:ml-[15%] ml-[10%] text-[2.4vw] line-through decoration-yellow">
+
+                <h3 className="2xl:text-[2.2em mb-[1vw] ml-[10%] text-[2.4vw] line-through decoration-yellow lg:ml-[15%]">
                   <span className="line-through decoration-double">N</span>{" "}
                   3,500,000
                 </h3>
+
                 <h3 className="flex items-center text-[2.4vw]">
-                  <span className="mr-1 lg:mr-2 text-[1.9vw] italic">NOW</span>
+                  <span className="mr-1 text-[1.9vw] italic lg:mr-2">NOW</span>
                   <span className="line-through decoration-double">N</span>{" "}
                   2,500,00
                 </h3>
               </div>
+
               <h2 className="w-fit text-nowrap bg-orange px-1 text-center text-[2.2vw] 2xl:text-[2em]">
                 T&C Applies
               </h2>
@@ -46,12 +50,13 @@ const Headliner = () => {
             <img
               src={phone}
               alt=""
-              className="absolute -left-[15%] lg:-left-[27%] lg:bottom-1 -bottom-[3%] z-10 w-[60%] lg:w-[65%]"
+              className="absolute -bottom-[3%] -left-[15%] z-10 w-[60%] lg:-left-[27%] lg:bottom-1 lg:w-[65%]"
             />
+
             <img
               src={smilingCustomer}
               alt=""
-              className="min-w-[110%] aspect-[4/2.9] -translate-x-[1%]"
+              className="aspect-[4/2.9] min-w-[110%] -translate-x-[1%]"
             />
           </div>
         </div>

@@ -1,7 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import stars from "../../assets/images/stars.png";
 import { CartState, Product } from "../../types/types";
-// import Loading from "../Loading";
 import Button from "../reusables/Button";
 import CartContext from "../../context/CartContext";
 
@@ -9,7 +8,8 @@ const Details = ({ product }: { product: Product }) => {
   const { addItemToCart, cartItems } = useContext<CartState>(CartContext);
 
   const [isInCart, setIsInCart] = useState<boolean>(false);
-  console.log(product);
+
+  // console.log(product);
   const toBeAddedToCart = {
     name: product.name,
     id: product.id,
@@ -33,14 +33,17 @@ const Details = ({ product }: { product: Product }) => {
         <h3 className="text-xs font-bold xs:text-sm lg:text-base xl:text-xl">
           {product?.name}
         </h3>
+
         <div className="flex space-x-1">
           <img src={stars} alt="" />
           <p className="text-[6px] xs:text-[8px] lg:text-xs xl:text-sm"></p>
         </div>
+
         <h4 className="text-[12px] font-bold xs:text-xs md:text-sm xl:text-base">
           <span className="line-through decoration-double">N</span>
           {product.current_price && product.current_price.toLocaleString()}
         </h4>
+
         <p className="max-w-md pt-2 text-[10px] xs:text-xs lg:text-sm xl:text-base">
           {product?.description}
         </p>

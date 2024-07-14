@@ -11,6 +11,7 @@ import { motion } from "framer-motion";
 
 const ProductList = () => {
   const [page, setPage] = useState<number>(1);
+
   const [showCategories, setShowCategories] = useState<boolean>(false);
 
   const [numberOfPages, setNumberOfPages] = useState<number>(1);
@@ -66,6 +67,7 @@ const ProductList = () => {
           <h1 className="text-xs text-white xs:text-sm lg:text-base">
             See Categories
           </h1>
+
           <img
             src={caret}
             alt=""
@@ -93,6 +95,7 @@ const ProductList = () => {
             ))}
         </motion.div>
       </div>
+
       {isLoading ? (
         <Loading />
       ) : (

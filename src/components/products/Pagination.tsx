@@ -24,6 +24,7 @@ const Pagination = ({
       clearInterval(intervalId);
     }, 1000);
   };
+
   return (
     <div className="lg:m mb-4 mt-16 flex items-center justify-center space-x-2 pt-12 lg:mb-12">
       {paginationArray?.map((page, index) => (

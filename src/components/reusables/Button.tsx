@@ -4,9 +4,14 @@ interface ButtonProps {
   variant: string;
   className?: string;
   children: React.ReactNode;
-  type?: "button"| 'reset'| "submit";
+  type?: "button" | "reset" | "submit";
 }
-const Button = ({ variant, className, children, type='button' }: ButtonProps) => {
+const Button = ({
+  variant,
+  className,
+  children,
+  type = "button",
+}: ButtonProps) => {
   let buttonClass = "";
 
   if (variant === "primary") {

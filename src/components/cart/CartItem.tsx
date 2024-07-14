@@ -6,7 +6,9 @@ import { Link } from "react-router-dom";
 const CartItem = ({ cartItem }: { cartItem: CartItemValues }) => {
   const { removeItemFromCart, updateItemQuantity } =
     useContext<CartState>(CartContext);
+
   const [count, setCount] = useState<number>(cartItem.quantity);
+
   const handleCount = (mode: "increase" | "decrease") => {
     if (count >= 1 && mode == "increase") {
       setCount((prevCount) => prevCount + 1);
