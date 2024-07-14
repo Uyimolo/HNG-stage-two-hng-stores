@@ -69,7 +69,7 @@ const Footer = () => {
     <footer className="bg-primary">
       <div className="mx-auto max-w-[1600px]">
         {/* footer info */}
-        <div className="grid grid-cols-[35%,1fr] gap-2 px-4 py-12 pb-20 lg:px-12 xl:px-16">
+        <div className="grid grid-cols-[35%,1fr] gap-2 px-4 py-12 pb-20 xs:grid-cols-[50%,1fr] md:gap-[5%] lg:grid-cols-[35%,1fr] lg:px-12 xl:px-16">
           {/* logo and address*/}
           <div className="space-y-2">
             <Logo variant="footer" />
@@ -80,7 +80,7 @@ const Footer = () => {
           </div>
 
           {/* other information */}
-          <div className="grid grid-cols-2 gap-x-2 gap-y-8 lg:gap-y-4 lg:grid-cols-3">
+          <div className="grid grid-cols-2 justify-start gap-x-2 gap-y-8 md:gap-x-[8%] lg:flex lg:gap-y-4">
             {/* categories */}
             <div className="">
               {/* heading */}
@@ -92,7 +92,10 @@ const Footer = () => {
                     <Link
                       to={`/category/${category.id}`}
                       key={index}
-                      className={cn(footerParagraph, "hover:text-yellow")}
+                      className={cn(
+                        footerParagraph,
+                        "capitalize hover:text-yellow",
+                      )}
                     >
                       {category.name}
                     </Link>
@@ -149,7 +152,7 @@ const Footer = () => {
                       key={social.platform}
                       src={social.icon}
                       alt={social.platform}
-                      className="cursor-pointer w-[18px] lg:w-5"
+                      className="w-[18px] cursor-pointer lg:w-5"
                     />
                   ))}
                 </div>

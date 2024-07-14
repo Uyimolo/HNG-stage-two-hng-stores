@@ -33,7 +33,7 @@ function App() {
       <CartProvider>
         <RouterProvider router={router} />
       </CartProvider>
-    // </QueryClientProvider>
+    </QueryClientProvider>
   );
 }
 

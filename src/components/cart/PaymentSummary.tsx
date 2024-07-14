@@ -25,7 +25,7 @@ const PaymentSummary = ({ variant, disabled = true }: PaymentSummaryProps) => {
         cartItems.length === 0 ? "hidden" : "",
       )}
     >
-      <h3 className="text-center font-bold text-sm md:text-base lg:text-[text-18]">
+      <h3 className="text-center text-sm font-bold md:text-base lg:text-[text-18]">
         PAYMENT SUMMARY
       </h3>
       {/* SECOND SECTION */}
@@ -58,19 +58,23 @@ const PaymentSummary = ({ variant, disabled = true }: PaymentSummaryProps) => {
       <div>
         {variant === "checkout" && disabled ? (
           <div
-            className={cn("block px-4", variant === "checkout" ? "mt-24" : "")}
+            className={cn("block px-4", variant === "checkout" ? "mt-24 space-y-2" : "")}
           >
             <Button
               variant="secondary"
               className="mt-8 min-w-full lg:min-w-full"
             >
-              Please fill in payment and checkout forms
+              Order Now
             </Button>
+            <p className="text-xs md:text-sm">Please fill in payment and checkout forms to continue.</p>
           </div>
         ) : (
           <Link
             to={variant === "cart" ? "/checkout" : "/success"}
-            className={cn("block px-4", variant === "checkout" ? "mt-24" : "")}
+            className={cn(
+              "mt-4 block px-4",
+              variant === "checkout" ? "lg:mt-24" : "",
+            )}
           >
             <Button
               variant="secondary"

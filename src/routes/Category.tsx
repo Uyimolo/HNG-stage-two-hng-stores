@@ -10,7 +10,7 @@ const Category = () => {
   const { categoryId } = useParams<string>();
 
   const [categoryName, setCategoryName] = useState<string>("Category");
-  
+
   const [loading, setLoading] = useState<boolean>(false);
 
   const apiKey = import.meta.env.VITE_API_KEY;
@@ -46,10 +46,10 @@ const Category = () => {
 
   return (
     <main>
-      <Container className="">
+      <Container className="mx-auto max-w-[1600px]">
         {!isLoading && (
-          <h1 className="bold text-lg lg:text-2xl">
-            {categoryName.toUpperCase()}
+          <h1 className="bold text-lg capitalize lg:text-2xl">
+            {categoryName}
           </h1>
         )}
         {loading ? (

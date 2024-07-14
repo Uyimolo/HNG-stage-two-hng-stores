@@ -62,9 +62,7 @@ const ProductCard = ({ product }: { product: Product }) => {
             <div className="flex items-center space-x-1">
               <img src={stars} alt="" className="w-16 md:w-20 xl:w-24" />
 
-              <p className="text-xs font-bold xl:text-sm">
-                (1.2k)
-              </p>
+              <p className="text-xs font-bold xl:text-sm">(1.2k)</p>
             </div>
           </div>
 
