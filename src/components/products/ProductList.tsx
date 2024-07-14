@@ -86,7 +86,7 @@ const ProductList = () => {
           {!categoryLoading &&
             categoryList.map((category: SingleCategory, index: number) => (
               <Link
-                className="rounded-full border px-2 py-1 text-xs capitalize hover:bg-primary hover:text-white md:text-sm"
+                className="rounded-full border px-2 py-1 text-sm capitalize hover:bg-primary hover:text-white md:text-sm lg:text-base"
                 key={index}
                 to={`/category/${category.id}`}
               >
