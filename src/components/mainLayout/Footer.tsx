@@ -34,10 +34,10 @@ const SocialsSection = [
 ];
 
 const footerParagraph =
-  "text-white text-[11px] xs:text-[12px] md:text-sm lg:text-base w-fit cursor-pointer";
+  "text-white text-sm md:text-sm lg:text-base w-fit cursor-pointer";
 
 const headingClass =
-  "mb-3 text-xs font-bold font-nunito text-white xs:text-base md:text-xl lg:text-2xl";
+  "mb-3 text-sm font-bold font-nunito text-white xs:text-base md:text-xl lg:text-2xl";
 
 const Footer = () => {
   // const [categoryList, setCategoryList] = useState<SingleCategory[]>();
