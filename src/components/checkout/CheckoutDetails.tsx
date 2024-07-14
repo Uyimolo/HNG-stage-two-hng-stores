@@ -72,14 +72,14 @@ const CheckoutDetails = ({
                 </h3>
                 {deets.title === "CUSTOMER ADDRESS" && (
                   <p
-                    className="cursor-pointer text-xs text-primary xs:text-xs md:text-sm lg:hover:underline xl:text-base"
+                    className="cursor-pointer text-sm text-primary md:text-sm lg:hover:underline lg:text-base"
                     onClick={() => setShowDetails(false)}
                   >
                     Change
                   </p>
                 )}
               </div>
-              <div className="border-t-2 border-yellow px-2 pb-12 pt-4 text-[12px] xs:text-xs md:text-sm lg:px-4 xl:text-base">
+              <div className="border-t-2 border-yellow px-2 pb-12 pt-4 text-sm lg:text-base lg:px-4">
                 <p>{deets.value1}</p>
                 <p>{deets.value2}</p>
               </div>
@@ -100,7 +100,7 @@ const CheckoutDetails = ({
                     )}
                     onClick={() => setPaymentMethod("on delivery")}
                   ></div>
-                  <p>{deets.value1}</p>
+                  <p className="text-sm lg:text-base">{deets.value1}</p>
                 </div>
 
                 <div className="flex items-start justify-between">
@@ -113,10 +113,10 @@ const CheckoutDetails = ({
                         )}
                         onClick={() => setPaymentMethod("pre payment")}
                       ></div>
-                      <p className="">{deets.value2}</p>
+                      <p className="text-sm lg:text-sm">{deets.value2}</p>
                     </div>
 
-                    <p className="pl-4">{deets.value3}</p>
+                    <p className="pl-4 text-sm lg:text-base">{deets.value3}</p>
                   </div>
                   <div className="flex space-x-2">
                     {cards.map((card, index) => (
