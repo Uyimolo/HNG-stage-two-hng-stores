@@ -40,7 +40,7 @@ const ProductCard = ({ product }: { product: Product }) => {
         <div className="absolute hidden aspect-square w-full place-content-center bg-black/30 group-hover:grid">
           <Link
             to={"/products/" + product.id}
-            className="rounded border p-2 text-xs text-white"
+            className="rounded border p-2 text-sm text-white"
           >
             View Product
           </Link>
@@ -55,20 +55,20 @@ const ProductCard = ({ product }: { product: Product }) => {
           </h4>
 
           <div className="space-y-[1px]">
-            <p className="overflow-hidden overflow-ellipsis whitespace-nowrap text-xs font-bold xs:text-xs md:text-sm xl:text-base">
+            <p className="overflow-hidden overflow-ellipsis whitespace-nowrap text-sm font-bold xl:text-base">
               {product.name}
             </p>
 
             <div className="flex items-center space-x-1">
               <img src={stars} alt="" className="w-16 md:w-20 xl:w-24" />
 
-              <p className="text-[9px] font-bold xs:text-[8px] lg:text-[10px] xl:text-xs">
+              <p className="text-xs font-bold xl:text-sm">
                 (1.2k)
               </p>
             </div>
           </div>
 
-          <h4 className="text-[12px] font-bold xs:text-xs md:text-sm xl:text-base">
+          <h4 className="text-sm font-bold md:text-sm xl:text-base">
             <span className="line-through decoration-double">N</span>
             {product.current_price &&
               product.current_price[0].NGN[0].toLocaleString()}
