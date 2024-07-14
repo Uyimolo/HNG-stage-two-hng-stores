@@ -32,7 +32,7 @@ const ProductCard = ({ product }: { product: Product }) => {
         {/* Product image */}
         <img
           src={"https://api.timbu.cloud/images/" + product.photos[0].url}
-          alt=""
+          alt={product.name}
           className="absolute left-1/2 top-1/2 aspect-square w-[100%] -translate-x-1/2 -translate-y-1/2 object-contain transition-all duration-200 group-hover:min-w-[120%]"
         />
 
