@@ -42,6 +42,34 @@ const CheckoutDetails = ({
       : setCheckoutEnabled(true);
   }, [paymentMethod]);
 
+ 
+  // get delivery date
+  const getWeekFromToday = () => {
+    const today = new Date();
+    const oneWeekFromToday = today.setDate(today.getDate() + 7);
+    const TenDaysFromToday = today.setDate(today.getDate() + 10);
+
+    const options: Intl.DateTimeFormatOptions = {
+      weekday: "long",
+      day: "numeric",
+      month: "long",
+      year: "numeric" as const,
+    };
+
+    const earliestDeliveryDate = new Intl.DateTimeFormat("en-US", options).format(
+      oneWeekFromToday,
+    );
+
+    const latestDeliveryDate = new Intl.DateTimeFormat("en-US", options).format(
+      TenDaysFromToday,
+    );
+
+    return [earliestDeliveryDate, latestDeliveryDate]
+
+    // return new Intl.DateTimeFormat("en-US", options).format(oneWeekFromToday);
+  };
+
+
   const checkoutDetails = [
     {
       title: "CUSTOMER ADDRESS",
@@ -51,7 +79,7 @@ const CheckoutDetails = ({
     {
       title: "DELIVERY DETAILS",
       value1: "Door Delivery",
-      value2: "Delivery between 15 July and 16 July.",
+      value2: `Delivery between ${getWeekFromToday()[0]} and ${getWeekFromToday()[1]} (if you order within the hour) .`,
     },
     {
       title: "PAYMENT OPTIONS",
