@@ -77,9 +77,16 @@ const Search = ({ className }: { className: string }) => {
         <div
           className={cn(
             "custom-scrollbar absolute left-0 top-12 max-h-[70vh] w-full bg-white",
-            products ? "rounded border border-gray pb-0 shadow-md overflow-y-scroll" : "",
+            products
+              ? "overflow-y-scroll rounded border border-gray pb-0 shadow-md"
+              : "",
           )}
         >
+          {products && (
+            <p className="p-2 pl-4 text-sm text-orange lg:text-base">
+              {`Showing ${products.length} results for "${searchValue}"`}
+            </p>
+          )}
           {products?.map((product: Product | null, index: number) => (
             <div
               key={index}
@@ -88,7 +95,7 @@ const Search = ({ className }: { className: string }) => {
               <Link
                 to={`/products/${product?.id}`}
                 className="flex items-center justify-between text-sm"
-                onClick={() => setSearchValue('')}
+                onClick={() => setSearchValue("")}
               >
                 <p>{product?.name}</p>
                 {/* <p>
