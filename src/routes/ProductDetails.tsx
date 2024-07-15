@@ -52,8 +52,8 @@ const ProductDetails = () => {
   return (
     <main className="relative pb-20">
       <div className="">
-        <Container className="grid gap-6 lg:grid-cols-2 lg:gap-12 max-w-[1600px] mx-auto">
-          <LightBox productId={productId} images={product?.photos} />
+        <Container className="mx-auto grid max-w-[1600px] gap-6 lg:grid-cols-2 lg:gap-12">
+          <LightBox images={product?.photos} />
           {isLoading ? <Loading /> : <Details product={product} />}
         </Container>
       </div>

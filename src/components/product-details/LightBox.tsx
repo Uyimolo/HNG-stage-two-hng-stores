@@ -3,6 +3,7 @@ import { Photo } from "../../types/types";
 
 type LightBoxProps = {
   images: Photo[];
+  
 };
 const LightBox = ({ images }: LightBoxProps) => {
   const [currentImage, setCurrentImage] = useState<string>("");
