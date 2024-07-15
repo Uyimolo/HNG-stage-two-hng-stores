@@ -15,7 +15,7 @@ const Cart = () => {
 
   return (
     <main>
-      <Container className="">
+      <Container className="max-w-[1600px] mx-auto ">
         <div className="grid items-start space-y-4 md:grid-cols-[1fr,30%] md:gap-3 md:space-y-0 xl:grid-cols-[1fr,20%]">
           {/* header */}
           <div className="md:sticky md:top-40 md:order-2 md:space-y-4">

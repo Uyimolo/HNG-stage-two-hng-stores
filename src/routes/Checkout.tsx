@@ -24,7 +24,7 @@ const Checkout = () => {
 
   return (
     <main className="pt-1">
-      <Container>
+      <Container className="mx-auto max-w-[1600px]">
         {showDetails ? (
           <CheckoutDetails
             street={formInfoDetails[2].value}
@@ -36,8 +36,8 @@ const Checkout = () => {
           <CheckoutForm
             formInfoDetails={formInfoDetails}
             setShowDetails={setShowDetails}
-              setFormInfoDetails={setFormInfoDetails}
-              setCheckoutFormValid={setCheckoutFormValid}
+            setFormInfoDetails={setFormInfoDetails}
+            setCheckoutFormValid={setCheckoutFormValid}
           />
         )}
       </Container>
