@@ -3,6 +3,7 @@ import { Photo } from "../../types/types";
 
 type LightBoxProps = {
   images: Photo[];
+  
 };
 const LightBox = ({ images }: LightBoxProps) => {
   const [currentImage, setCurrentImage] = useState<string>("");
@@ -18,7 +19,7 @@ const LightBox = ({ images }: LightBoxProps) => {
   useEffect(() => {
     if (formattedImages && currentImage === "")
       setCurrentImage(formattedImages[0]);
-  }, [formattedImages, currentImage]);
+  }, [formattedImages, currentImage, images]);
 
   return (
     <div className="grid gap-2 space-y-5 overflow-hidden lg:sticky lg:top-40 lg:aspect-[2/1.5] lg:grid-cols-[20%,1fr] lg:gap-0 lg:space-y-0">
